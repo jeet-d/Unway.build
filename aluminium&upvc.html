@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unway Build</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header .contact-info {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        header .contact-info a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        header .social-icons a {
+            margin-left: 10px;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #f8f8f8;
+            padding: 10px;
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        .carousel {
+            position: relative;
+            width: 100%;
+            height: 466px; /* Adjusted to match image dimensions */
+            overflow: hidden;
+        }
+
+        .carousel-inner {
+            display: flex;
+            width: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-item {
+            width: 100%;
+            flex-shrink: 0;
+            height: 466px; /* Adjusted to match image dimensions */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .carousel-item:nth-child(1) {
+            background-image: url('banner1.jpeg');
+        }
+
+        .carousel-item:nth-child(2) {
+            background-image: url('banner4.jpeg');
+        }
+
+        .carousel-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .carousel-buttons button {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        .carousel-buttons button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="contact-info">
+            <span><i class="fas fa-phone"></i>+91 99991648</span>
+            <a href="mailto:info@Unway Buildkolkata.com"><i class="fas fa-envelope"></i> unwaygroup@gmail.com</a>
+        </div>
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </header>
+
+    <nav>
+        <a href="#">Products</a>
+        <a href="#">Testimonials</a>
+        <a href="#">Our Projects</a>
+        <!--<a href="#">Download Aluminium Brochure</a>
+        <a href="#">Download Retail Brochure</a>-->
+    </nav>
+
+    <div class="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item"></div>
+            <div class="carousel-item"></div>
+        </div>
+        <div class="carousel-buttons">
+            <button id="prev">&#10094;</button>
+            <button id="next">&#10095;</button>
+        </div>
+    </div>
+
+    <script>
+        const carouselInner = document.querySelector('.carousel-inner');
+        const items = document.querySelectorAll('.carousel-item');
+        const totalItems = items.length;
+        let currentIndex = 0;
+
+        document.getElementById('prev').addEventListener('click', () => {
+            currentIndex = (currentIndex === 0) ? totalItems - 1 : currentIndex - 1;
+            updateCarousel();
+        });
+
+        document.getElementById('next').addEventListener('click', () => {
+            currentIndex = (currentIndex === totalItems - 1) ? 0 : currentIndex + 1;
+            updateCarousel();
+        });
+
+        function updateCarousel() {
+            const offset = -currentIndex * 100;
+            carouselInner.style.transform = `translateX(${offset}%)`;
+        }
+    </script>
+    <div class="window-quote-section" style="padding: 20px; background-color: #f5f5f5; font-family: Arial, sans-serif;">
+        <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+            <div class="card" style="background-color:orange; color: #fff; border-radius: 10px; overflow: hidden; text-align: center; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                <img src="assets/upvc/upvc-sliding.jpg" alt="uPVC Sliding" style="width: 100%; height: 200px; object-fit: cover;">
+                <div class="card-content" style="padding: 20px;">
+                    <div class="card-title" style="font-size: 1.2rem; font-weight: bold; margin-bottom: 10px;">uPVC Sliding</div>
+                    <div class="card-description" style="font-size: 1rem; margin-bottom: 20px;">Door, Window</div>
+                    <a href="#" class="btn" style="display: inline-block; padding: 10px 20px; color:orange; background-color: #fff; border: none; border-radius: 5px; font-weight: bold; text-decoration: none; transition: background-color 0.3s;">Request Quote</a>
+                </div>
+            </div>
+            <div class="card" style="background-color:orange; color: #fff; border-radius: 10px; overflow: hidden; text-align: center; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                <img src="assets/upvc/aluminium-sliding.jpg" alt="Aluminium Sliding" style="width: 100%; height: 200px; object-fit: cover;">
+                <div class="card-content" style="padding: 20px;">
+                    <div class="card-title" style="font-size: 1.2rem; font-weight: bold; margin-bottom: 10px;">Aluminium Sliding</div>
+                    <div class="card-description" style="font-size: 1rem; margin-bottom: 20px;">Slider Window, Series 3000</div>
+                    <a href="#" class="btn" style="display: inline-block; padding: 10px 20px; color:orange; background-color: #fff; border: none; border-radius: 5px; font-weight: bold; text-decoration: none; transition: background-color 0.3s;">Request Quote</a>
+                </div>
+            </div>
+            <div class="card" style="background-color:orange; color: #fff; border-radius: 10px; overflow: hidden; text-align: center; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                <img src="assets/upvc/upvc-casement.jpg" alt="uPVC Casement" style="width: 100%; height: 200px; object-fit: cover;">
+                <div class="card-content" style="padding: 20px;">
+                    <div class="card-title" style="font-size: 1.2rem; font-weight: bold; margin-bottom: 10px;">uPVC Casement</div>
+                    <div class="card-description" style="font-size: 1rem; margin-bottom: 20px;">Window</div>
+                    <a href="#" class="btn" style="display: inline-block; padding: 10px 20px; color:orange; background-color: #fff; border: none; border-radius: 5px; font-weight: bold; text-decoration: none; transition: background-color 0.3s;">Request Quote</a>
+                </div>
+            </div>
+            <div class="card" style="background-color:orange; color: #fff; border-radius: 10px; overflow: hidden; text-align: center; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                <img src="assets/upvc/aluminium-casement.jpg" alt="Aluminium Casement" style="width: 100%; height: 200px; object-fit: cover;">
+                <div class="card-content" style="padding: 20px;">
+                    <div class="card-title" style="font-size: 1.2rem; font-weight: bold; margin-bottom: 10px;">Aluminium Casement</div>
+                    <div class="card-description" style="font-size: 1rem; margin-bottom: 20px;">Window, Series 3000</div>
+                    <a href="#" class="btn" style="display: inline-block; padding: 10px 20px; color:orange; background-color: #fff; border: none; border-radius: 5px; font-weight: bold; text-decoration: none; transition: background-color 0.3s;">Request Quote</a>
+                </div>
+            </div>
+        </div>
+        <div class="window-quote-section" style="padding: 20px; background-color: #f5f5f5; font-family: Arial, sans-serif;">
+            <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                <div class="card" style="background-color:orange; color: #fff; border-radius: 10px; overflow: hidden; text-align: center; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                    <img src="assets/upvc/uPVC-Tilt-Turn.jpg" alt="uPVC Tilt & Turn" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div class="card-content" style="padding: 20px;">
+                        <div class="card-title" style="font-size: 1.2rem; font-weight: bold; margin-bottom: 10px;">uPVC Tilt & Turn</div>
+                        <div class="card-description" style="font-size: 1rem; margin-bottom: 20px;">Door, Window</div>
+                        <a href="#" class="btn" style="display: inline-block; padding: 10px 20px; color:orange; background-color: #fff; border: none; border-radius: 5px; font-weight: bold; text-decoration: none; transition: background-color 0.3s;">Request Quote</a>
+                    </div>
+                </div>
+                <div class="card" style="background-color:orange; color: #fff; border-radius: 10px; overflow: hidden; text-align: center; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                    <img src="assets/upvc/aluminium-tilt -turn.jpg" alt="Aluminium Tilt & Turn" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div class="card-content" style="padding: 20px;">
+                        <div class="card-title" style="font-size: 1.2rem; font-weight: bold; margin-bottom: 10px;">Aluminium Tilt & Turn</div>
+                        <div class="card-description" style="font-size: 1rem; margin-bottom: 20px;">Slider Window, Series 3000</div>
+                        <a href="#" class="btn" style="display: inline-block; padding: 10px 20px; color:orange; background-color: #fff; border: none; border-radius: 5px; font-weight: bold; text-decoration: none; transition: background-color 0.3s;">Request Quote</a>
+                    </div>
+                </div>
+                <div class="card" style="background-color:orange; color: #fff; border-radius: 10px; overflow: hidden; text-align: center; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                    <img src="assets/upvc/uPVC-combination.jpg" alt="uPVC Combination" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div class="card-content" style="padding: 20px;">
+                        <div class="card-title" style="font-size: 1.2rem; font-weight: bold; margin-bottom: 10px;">uPVC Combination</div>
+                        <div class="card-description" style="font-size: 1rem; margin-bottom: 20px;">Window</div>
+                        <a href="#" class="btn" style="display: inline-block; padding: 10px 20px; color:orange; background-color: #fff; border: none; border-radius: 5px; font-weight: bold; text-decoration: none; transition: background-color 0.3s;">Request Quote</a>
+                    </div>
+                </div>
+                <div class="card" style="background-color:orange; color: #fff; border-radius: 10px; overflow: hidden; text-align: center; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                    <img src="assets/upvc/aluminium-large-fixed.jpg" alt="Aluminium Large Fixed" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div class="card-content" style="padding: 20px;">
+                        <div class="card-title" style="font-size: 1.2rem; font-weight: bold; margin-bottom: 10px;">Aluminium Large Fixed</div>
+                        <div class="card-description" style="font-size: 1rem; margin-bottom: 20px;">Window, Series 3000</div>
+                        <a href="#" class="btn" style="display: inline-block; padding: 10px 20px; color:orange; background-color: #fff; border: none; border-radius: 5px; font-weight: bold; text-decoration: none; transition: background-color 0.3s;">Request Quote</a>
+                    </div>
+                </div>
+                <div class="card" style="background-color:orange; color: #fff; border-radius: 10px; overflow: hidden; text-align: center; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                    <img src="assets/upvc/uPVC-Tilt-Turn.jpg" alt="uPVC Tilt & Turn" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div class="card-content" style="padding: 20px;">
+                        <div class="card-title" style="font-size: 1.2rem; font-weight: bold; margin-bottom: 10px;">uPVC Tilt & Turn</div>
+                        <div class="card-description" style="font-size: 1rem; margin-bottom: 20px;">Door, Window</div>
+                        <a href="#" class="btn" style="display: inline-block; padding: 10px 20px; color:orange; background-color: #fff; border: none; border-radius: 5px; font-weight: bold; text-decoration: none; transition: background-color 0.3s;">Request Quote</a>
+                    </div>
+                </div>
+                <div class="card" style="background-color:orange; color: #fff; border-radius: 10px; overflow: hidden; text-align: center; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                    <img src="assets/upvc/aluminium-tilt -turn.jpg" alt="Aluminium Tilt & Turn" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div class="card-content" style="padding: 20px;">
+                        <div class="card-title" style="font-size: 1.2rem; font-weight: bold; margin-bottom: 10px;">Aluminium Tilt & Turn</div>
+                        <div class="card-description" style="font-size: 1rem; margin-bottom: 20px;">Slider Window, Series 3000</div>
+                        <a href="#" class="btn" style="display: inline-block; padding: 10px 20px; color:orange; background-color: #fff; border: none; border-radius: 5px; font-weight: bold; text-decoration: none; transition: background-color 0.3s;">Request Quote</a>
+                    </div>
+                </div>
+                <div class="card" style="background-color:orange; color: #fff; border-radius: 10px; overflow: hidden; text-align: center; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                    <img src="assets/upvc/uPVC-combination.jpg" alt="uPVC Combination" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div class="card-content" style="padding: 20px;">
+                        <div class="card-title" style="font-size: 1.2rem; font-weight: bold; margin-bottom: 10px;">uPVC Combination</div>
+                        <div class="card-description" style="font-size: 1rem; margin-bottom: 20px;">Window</div>
+                        <a href="#" class="btn" style="display: inline-block; padding: 10px 20px; color:orange; background-color: #fff; border: none; border-radius: 5px; font-weight: bold; text-decoration: none; transition: background-color 0.3s;">Request Quote</a>
+                    </div>
+                </div>
+                <div class="card" style="background-color:orange; color: #fff; border-radius: 10px; overflow: hidden; text-align: center; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+                    <img src="assets/upvc/aluminium-large-fixed.jpg" alt="Aluminium Large Fixed" style="width: 100%; height: 200px; object-fit: cover;">
+                    <div class="card-content" style="padding: 20px;">
+                        <div class="card-title" style="font-size: 1.2rem; font-weight: bold; margin-bottom: 10px;">Aluminium Large Fixed</div>
+                        <div class="card-description" style="font-size: 1rem; margin-bottom: 20px;">Window, Series 3000</div>
+                        <a href="#" class="btn" style="display: inline-block; padding: 10px 20px; color:orange; background-color: #fff; border: none; border-radius: 5px; font-weight: bold; text-decoration: none; transition: background-color 0.3s;">Request Quote</a>
+                    </div>
+                </div>
+            </div>
+            
+        <script>
+            document.querySelectorAll('.btn').forEach(button => {
+                button.addEventListener('click', event => {
+                    event.preventDefault();
+                    alert('Request Quote functionality coming soon!');
+                });
+            });
+        </script>
+    </div>
+    <div style="width: 100%; background-color: #f5f5f5; font-family: Arial, sans-serif;">
+        <div style="max-width: 1300px; margin: 0 auto; padding: 20px;">
+          <h2 style="text-align: center; color:orange; margin-bottom: 20px; font-size: 30px;">Frequently Asked Questions</h2>
+          <div class="faq-item" style="border-bottom: 1px solid #ddd;">
+            <button style="width: 100%; text-align: left; padding: 15px; background-color: white; color: black; border: none; font-size:16px; font-weight: bold; cursor: pointer;">
+              <strong>How can I reach the New Edge Realty Solutions Showroom in Kolkata ?</strong>
+            </button>
+            <div style="padding: 15px; display: none; background-color: #fcf3e8;">
+              New Edge Realty Solutions is located in Mudiali, at 137, Shyama Prasad Mukherjee Road, Near Mudiali Petrol Pump. Kolkata - 700026. For easy navigation to the windows and doors dealer, you can also use Unway Build’s Locator.
+            </div>
+          </div>
+          <div class="faq-item" style="border-bottom: 1px solid #ddd;">
+            <button style="width: 100%; text-align: left; padding: 15px; background-color: white; color: black; border: none; font-size:16px; font-weight: bold; cursor: pointer;">
+              <strong>What are the contact details for New Edge Realty Solutions in Mudiali?</strong>
+            </button>
+            <div style="padding: 15px; display: none; background-color: #fcf3e8;">
+              Contact details will go here.
+            </div>
+          </div>
+          <div class="faq-item" style="border-bottom: 1px solid #ddd;">
+            <button style="width: 100%; text-align: left; padding: 15px; background-color: white; color: black; border: none; font-size:16px; font-weight: bold; cursor: pointer;">
+              <strong>What areas are serviced in Kolkata by New Edge Realty Solutions?</strong>
+            </button>
+            <div style="padding: 15px; display: none; background-color: #fcf3e8;">
+              Service areas information will go here.
+            </div>
+          </div>
+          <div class="faq-item" style="border-bottom: 1px solid #ddd;">
+            <button style="width: 100%; text-align: left; padding: 15px; background-color: white; color: black; border: none; font-size:16px; font-weight: bold; cursor: pointer;">
+              <strong>Does New Edge Realty Solutions provide doorstep delivery in Kolkata?</strong>
+            </button>
+            <div style="padding: 15px; display: none; background-color: #fcf3e8;">
+              Delivery information will go here.
+            </div>
+          </div>
+          <div class="faq-item" style="border-bottom: 1px solid #ddd;">
+            <button style="width: 100%; text-align: left; padding: 15px; background-color: white; color: black; border: none; font-size:16px; font-weight: bold; cursor: pointer;">
+              <strong>Where can I find soundproof Windows & Doors in West Bengal?</strong>
+            </button>
+            <div style="padding: 15px; display: none; background-color: #fcf3e8;">
+              Soundproof windows and doors information will go here.
+            </div>
+          </div>
+          <div class="faq-item" style="border-bottom: 1px solid #ddd;">
+            <button style="width: 100%; text-align: left; padding: 15px; background-color: white; color: black; border: none; font-size:16px; font-weight: bold; cursor: pointer;">
+              <strong>How much does soundproof doors and windows cost?</strong>
+            </button>
+            <div style="padding: 15px; display: none; background-color: #fcf3e8;">
+              Cost information will go here.
+            </div>
+          </div>
+          <div class="faq-item" style="border-bottom: 1px solid #ddd;">
+            <button style="width: 100%; text-align: left; padding: 15px; background-color: white; color: black; border: none; font-size:16px; font-weight: bold; cursor: pointer;">
+              <strong>How to keep windows and doors safe from rainwater seepage?</strong>
+            </button>
+            <div style="padding: 15px; display: none; background-color: #fcf3e8;">
+              Rainwater seepage prevention tips will go here.
+            </div>
+          </div>
+          <div class="faq-item" style="border-bottom: 1px solid #ddd;">
+            <button style="width: 100%; text-align: left; padding: 15px; background-color: white; color: black; border: none; font-size:16px; font-weight: bold; cursor: pointer;">
+              <strong>How to maintain Unway Build windows and doors?</strong>
+            </button>
+            <div style="padding: 15px; display: none; background-color: #fcf3e8;">
+              Maintenance tips will go here.
+            </div>
+          </div>
+          <div class="faq-item" style="border-bottom: 1px solid #ddd;">
+            <button style="width: 100%; text-align: left; padding: 15px; background-color: white; color: black; border: none; font-size:16px; font-weight: bold; cursor: pointer;">
+              <strong>What is the cost of maintaining Unway Build windows and doors?</strong>
+            </button>
+            <div style="padding: 15px; display: none; background-color: #fcf3e8;">
+              Maintenance cost information will go here.
+            </div>
+          </div>
+          <div class="faq-item" style="border-bottom: 1px solid #ddd;">
+            <button style="width: 100%; text-align: left; padding: 15px; background-color: white; color: black; border: none; font-size:16px; font-weight: bold; cursor: pointer;">
+              <strong>How would I know that my windows and doors need maintenance?</strong>
+            </button>
+            <div style="padding: 15px; display: none; background-color: #fcf3e8;">
+              Maintenance indicators will go here.
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <script>
+        document.querySelectorAll('.faq-item button').forEach(button => {
+          button.addEventListener('click', () => {
+            const currentlyActive = document.querySelector('.faq-item button[aria-expanded="true"]');
+            if (currentlyActive && currentlyActive !== button) {
+              currentlyActive.setAttribute('aria-expanded', 'false');
+              currentlyActive.nextElementSibling.style.display = 'none';
+            }
+            const content = button.nextElementSibling;
+            const isExpanded = button.getAttribute('aria-expanded') === 'true';
+            button.setAttribute('aria-expanded', !isExpanded);
+            content.style.display = isExpanded ? 'none' : 'block';
+          });
+        });
+      </script>
+    </div>
+    <style>
+      body {
+          margin: 0;
+          font-family: Arial, sans-serif;
+      }
+
+      .footer {
+          background-color: orange;
+          color: white;
+          text-align: center;
+          padding: 10px 0;
+          font-size: 16px;
+      }
+
+      .footer a {
+          color: white;
+          text-decoration: none;
+          font-weight: bold;
+      }
+
+      .footer a:hover {
+          text-decoration: underline;
+      }
+
+      .footer span {
+          display: block;
+      }
+
+      .footer span:nth-child(1) {
+          margin-bottom: 5px;
+      }
+  </style>
+</head>
+<body>
+
+  <footer class="footer">
+      <span>Inquiry: +91-9088450450 | 137, Shyama Prasad Mukherjee Road, Near Mudiali Petrol Pump, Kolkata - 700026</span>
+      <span>Designed By Unway Build</span>
+  </footer>
+</body>
+</html>

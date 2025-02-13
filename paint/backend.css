@@ -1,0 +1,319 @@
+.IconLauncher__BaseLauncher-sc-1tera9m-0 {
+    display: none;
+}
+
+.searchResultBox {
+    display: none;
+}
+
+.faqcat_container {
+    text-decoration: none;
+    color: #001C54;
+}
+
+.tabs-media-video-tab a {
+    text-decoration: none;
+    color: #001C54;
+}
+
+.factive ul>li:first-child {
+    background: linear-gradient(90deg, #FFA23F 0%, #F8C000 100%);
+    border-bottom: none;
+}
+
+.discover-online-programs .tab-wrap .tabs ul li a {
+    color: #001C54;
+    text-decoration: none;
+}
+
+.program-list-wrap {
+    margin: 3rem 0rem 2rem 0rem;
+}
+
+.js-pager__items .pager__item {
+    padding-right: var(--bs-gutter-x, 1.5rem);
+    padding-left: var(--bs-gutter-x, 1.5rem);
+    pointer-events: auto;
+    text-align: center !important;
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+    max-width: 720px;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.js-pager__items .pager__item a {
+    border: 1px solid;
+    border-color: #F8C000;
+    color: #001C54;
+    font-family: "Gilroy-Regular", sans-serif;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    user-select: none;
+    background-color: transparent;
+    padding: .5rem 2rem;
+    font-size: 1rem;
+    border-radius: 50rem;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.js-pager__items .pager__item a:hover {
+    background-color: #FFA23F;
+}
+
+.card-body .stretched-link {
+    font-weight: 700;
+}
+
+.courses-spotlight h1.h2 {
+    font-size: 2.1rem;
+}
+
+.syllabus .mrgl20 {
+    margin-left: 20px;
+}
+
+.mbaknowmore {
+    text-decoration: underline;
+    color: #001C54;
+}
+
+.blog-cont ol {
+    padding-left: 30px;
+}
+
+.blog-cont ul {
+    margin-left: 30px;
+}
+
+.blog-cont ul li {
+    list-style-type: circle;
+}
+
+.heading-3 {
+    font-size: 1.4rem !important;
+}
+
+.fntblogcontainer {
+    color: #333 !important;
+}
+
+.frontmediacontainer {
+    text-decoration: none;
+}
+
+#webform-submission-corporate-page-node-350-form-ajax #edit-actions--3 {
+    text-align: center;
+}
+
+#cal_result {
+    color: #C93128;
+    font-weight: 700;
+}
+
+#webform-submission-our-painting-expert-node-11514-add-form .webform-confirmation {
+    width: 100%;
+}
+
+.form-control,
+.form-select {
+    background-color: transparent !important
+}
+
+/*.tabhide{display: none !important;}*/
+.hide {
+    display: none !important;
+}
+
+#webform-submission-painting-services-node-11553-add-form .row-cols-1 {
+    width: 100%;
+}
+
+#webform-submission-nextgen-painting-services-node-11734-add-form .row-cols-1 {
+    width: 100%;
+}
+
+#webform-submission-painting-services-node-11553-add-form #edit-terms-conditions--description p {
+    font-size: 9px;
+    margin-bottom: 0.2rem;
+}
+
+#webform-submission-painting-advaisor-program-node-11555-add-form .row-cols-1 {
+    width: 100%;
+}
+
+#webform-submission-painting-advaisor-program-node-11555-add-form #edit-terms-conditions--description p {
+    font-size: 9px;
+    margin-bottom: 0.2rem;
+}
+
+.main-header .bind .bottom .nav ul li .mega-menu-wrap .wrap .links-block .block .link-wrap a:last-child {
+    color: #8B8B8B !important;
+}
+
+.has-mega-menu .views-element-container {
+    width: 30%;
+}
+
+.has-mega-menu .links-block .views-element-container {
+    width: 100%;
+}
+
+.has-mega-menu .views-element-container .highlight-block {
+    width: 100% !important;
+}
+
+.ui-autocomplete {
+    background-color: #fff;
+    border: 1px solid #454545;
+	z-index: 2;
+}
+
+.pro-data-filter {
+    display: none;
+}
+
+@media screen and (max-width : 767px) {
+    .has-mega-menu .views-element-container {
+        width: 100%;
+    }
+}
+.select-wrapper {
+     position: relative;
+     user-select: none;
+     width: 100%;
+}
+ .select {
+     position: relative;
+     display: flex;
+     flex-direction: column;
+     border-width: 0 2px 0 2px;
+     border-style: solid;
+     border-color: #394a6d;
+}
+ .select__trigger {
+     position: relative;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     padding: 0 22px;
+     font-size: 20px;
+     font-weight: 300;
+     color: #3b3b3b;
+     height: 60px;
+     line-height: 60px;
+     background: #ffffff;
+     cursor: pointer;
+     border-width: 2px 0 2px 0;
+     border-style: solid;
+     border-color: #394a6d;
+}
+ .custom-options {
+     position: absolute;
+     display: block;
+     top: 100%;
+     left: 0;
+     right: 0;
+     border: 2px solid #394a6d;
+     border-top: 0;
+     background: #fff;
+     transition: all 0.5s;
+     opacity: 0;
+     visibility: hidden;
+     pointer-events: none;
+     z-index: 2;
+}
+ .select.open .custom-options {
+     opacity: 1;
+     visibility: visible;
+     pointer-events: all;
+}
+ .custom-option {
+     position: relative;
+     display: block;
+     padding: 0 22px 0 22px;
+     font-size: 22px;
+     font-weight: 300;
+     color: #3b3b3b;
+     line-height: 60px;
+     cursor: pointer;
+     transition: all 0.5s;
+}
+ .custom-option:hover {
+     cursor: pointer;
+     background-color: #b2b2b2;
+}
+ .custom-option.selected {
+     color: #ffffff;
+     background-color: #305c91;
+}
+.blog-arrow {
+     position: relative;
+     height: 15px;
+     width: 15px;
+}
+ .blog-arrow::before, .blog-arrow::after {
+     content: "";
+     position: absolute;
+     bottom: 0px;
+     width: 0.15rem;
+     height: 100%;
+     transition: all 0.5s;
+}
+ .blog-arrow::before {
+     left: -5px;
+     transform: rotate(45deg);
+     background-color: #394a6d;
+}
+ .blog-arrow::after {
+     left: 5px;
+     transform: rotate(-45deg);
+     background-color: #394a6d;
+}
+ .open .blog-arrow::before {
+     left: -5px;
+     transform: rotate(-45deg);
+}
+ .open .blog-arrow::after {
+     left: 5px;
+     transform: rotate(45deg);
+}
+
+.spotlight-painting-service .highlights-wrap {    
+    display: none;
+	}
+.getInTouchModal .getInTouchModalContent form .js-form-item-i-agree-to-the-terms-of-service-and-privacy-policy-yes-i-would-l{
+    display: flex;
+    align-items: flex-start;
+    text-align: start;
+    flex-wrap: wrap;	
+}	
+.getInTouchModal .getInTouchModalContent form .js-form-item-i-agree-to-the-terms-of-service-and-privacy-policy-yes-i-would-l .disclaimer {
+    font-size: 8px;
+    width: calc(100% - 50px);
+	margin-left: 10px;
+}
+a.faq{color:#00205B !important;font-weight:800 !important;}
+a.faq:hover{color:#E7194F !important;font-weight:800 !important;}
+
+.user-login-form h1{margin-top:100px;}
+#map{height:700px;}
+.store-info-sec .store-grid-container .left-column-wrapper .store-head h2 {
+    color: #ffffff;
+    margin-bottom: 0px;
+}
+.views-exposed-form{display:none;}
+.search input {
+    border: none;
+    width: 100%;
+    background-color: #fff;
+    animation: none;
+	padding: 10px;
+}
+.color-search-bar .container .search {border-radius: 30px;}
+.storelistcity.color-search-bar{margin-top:0px !important;}
+.kansaiselect{color: #8B8B8B !important;}

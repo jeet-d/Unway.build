@@ -1,0 +1,330 @@
+jQuery(function (t) {
+  let e = t(window).width();
+  var i = 0;
+  t(".hamburger").on("click", function () {
+    0 == i
+      ? (TweenMax.to(t(this).find("li:eq(0)"), 0.3, { rotation: -45, y: 7 }),
+        TweenMax.to(t(this).find("li:eq(1)"), 0.3, { opacity: 0 }),
+        TweenMax.to(t(this).find("li:eq(2)"), 0.3, { rotation: 45, y: -7 }),
+        t(".main-header .bind .bottom .nav").slideDown(),
+        t(".overlay-bg").fadeIn(),
+        t("html,body").addClass("lock-scroll"),
+        (i = 1))
+      : (TweenMax.to(t(this).find("li:eq(0)"), 0.3, { rotation: 0, y: 0 }),
+        TweenMax.to(t(this).find("li:eq(1)"), 0.3, { opacity: 1 }),
+        TweenMax.to(t(this).find("li:eq(2)"), 0.3, { rotation: 0, y: 0 }),
+        t(".main-header .bind .bottom .nav").slideUp(),
+        t(".overlay-bg").fadeOut(),
+        t("html,body").removeClass("lock-scroll"),
+        (i = 0));
+  }),
+    e > 1180 &&
+    (t(
+      ".main-header .bottom .type-dropdown, .main-header .bottom .nav ul li.has-mega-menu, .main-header .bind .top .links-wrap ul li.has-sub-menu"
+    ).on("mouseover", function () {
+      t(".overlay-bg").show();
+    }),
+      t(
+        ".main-header .bottom .type-dropdown, .main-header .bottom .nav ul li.has-mega-menu, .main-header .bind .top .links-wrap ul li.has-sub-menu"
+      ).on("mouseout", function () {
+        t(".overlay-bg").hide();
+      })),
+    t(".main-header .top .mobile-nav-wrap .type-dropdown > a").on(
+      "click",
+      function () {
+        t(this).closest(".type-dropdown").toggleClass("active");
+      }
+    ),
+    t(".main-header .top .mobile-nav-wrap .type-dropdown .sub-menu .close").on(
+      "click",
+      function () {
+        t(".main-header .top .mobile-nav-wrap .type-dropdown").removeClass(
+          "active"
+        );
+      }
+    ),
+    e < 1024 &&
+    (t(".main-header .bind .bottom .nav ul li a").on("click", function () {
+      t(this).parent().hasClass("active")
+        ? (t(this).parent().removeClass("active"),
+          t(this).parent().find(".mega-menu-wrap").slideUp())
+        : (t(this).parents(".nav").find("li").removeClass("active"),
+          t(this).parents(".nav").find(".mega-menu-wrap").slideUp(),
+          t(this).parent().addClass("active"),
+          t(this).parent().find(".mega-menu-wrap").slideDown());
+    }),
+      t(".mega-menu-wrap .wrap .links-block .block .heading").on(
+        "click",
+        function () {
+          t(this).next(".link-wrap").slideToggle(),
+            t(this)
+              .parent()
+              .siblings(".block")
+              .find(".link-wrap:visible")
+              .slideUp(),
+            t(".mega-menu-wrap .wrap .links-block .block .heading").toggleClass(
+              "active"
+            ),
+            t(this)
+              .parent()
+              .siblings(".block")
+              .find(".heading")
+              .removeClass("active");
+        }
+      )),
+    e < 1024 &&
+    t(".main-footer .head").on("click", function () {
+      t(this).next(".links").slideToggle(),
+        t(this).parent().siblings(".col").find(".links:visible").slideUp(),
+        t("footer .head").toggleClass("active"),
+        t(this).parent().siblings(".col").find(".head").removeClass("active");
+    }),
+    t(document).on("click", ".filter-options-accr .head", function () {
+      t(".cursor-auto"),
+        t(this).hasClass("cursor-auto") ||
+        t(".filter-options-accr .head").not(this).removeClass("active").next(".content").slideUp(),
+        (t(this).next(".content").slideToggle(),
+          t(this).toggleClass("active"));
+    }),
+    // t(document).on(
+    //   "click",
+    //   ".filter-options-accr .content.radio ul li",
+    //   function () {
+    //     t(this).siblings("li").removeClass("active"),
+    //       t(this).addClass("active"),
+    //       t(this).parent().find(".paint-list").slideUp(),
+    //       t(this).next(".paint-list").slideDown();
+    //   }
+    // ),
+    t(document).on(
+      "click",
+      ".filter-options-accr .content.check ul li",
+      function () {
+        t(this).toggleClass("active");
+      }
+    ),
+    t(".accr-wrap .head").on("click", function () {
+      t(this)
+        .next(".content")
+        .slideToggle()
+        .siblings(".content:visible")
+        .slideUp(),
+        t(this).toggleClass("active"),
+        t(this).siblings(".head").removeClass("active");
+    }),
+    t(".like").on("click", function () {
+      t(this).toggleClass("active");
+    }),
+    t(document).on(
+      "click",
+      ".investor-left-filter ul li.has-child",
+      function () {
+        t(this).toggleClass("active"), t(this).next(".sub-child").slideToggle();
+      }
+    ),
+    t(document).on("click", ".tabs-wrap .tabs-head ul li", function () {
+      var e = t(this).index();
+      t(this)
+        .closest(".tabs-wrap")
+        .find(".tabs-head ul li")
+        .removeClass("active"),
+        t(this).addClass("active"),
+        t(this).closest(".tabs-wrap").find(".tabs-content .content").hide(),
+        t(this)
+          .closest(".tabs-wrap")
+          .find(".tabs-content .content:eq(" + e + ")")
+          .show(),
+        t(this)
+          .closest(".tabs-wrap")
+          .find(".tabs-content .content")
+          .find(".flickity-enabled").length &&
+        t(this)
+          .closest(".tabs-wrap")
+          .find(".tabs-content .content")
+          .find(".flickity-enabled")
+          .flickity("resize");
+    }),
+    e < 1024 &&
+    (t(".filter-trigger-mob .wrap.sort-by").on("click", function () {
+      t(".overlay-bg").fadeToggle(),
+        t(".sort-by-filter-option").addClass("active"),
+        t("html,body").addClass("lock-scroll");
+    }),
+      t(".sort-by-filter-option .heading .close, .overlay-bg").on(
+        "click",
+        function () {
+          t(".overlay-bg").fadeOut(),
+            t(".sort-by-filter-option").removeClass("active"),
+            t("html,body").removeClass("lock-scroll");
+        }
+      ),
+      t(".filter-trigger-mob .wrap.filter").on("click", function () {
+        t(".overlay-bg").fadeToggle(),
+          t(".filter-in-mobile").addClass("active"),
+          t("html,body").addClass("lock-scroll");
+      }),
+      t(".filter-in-mobile .close, .overlay-bg").on("click", function () {
+        t(".overlay-bg").fadeOut(),
+          t(".filter-in-mobile").removeClass("active"),
+          t("html,body").removeClass("lock-scroll");
+      })),
+    t(document).on("click", ".tab-wrapper .product-tab li", function () {
+      t(".tab-content.four-grid-carousel").flickity("destroy"),
+        t(this).parents(".product-tab").find("li").removeClass("active"),
+        t(this)
+          .parents(".tab-wrapper")
+          .find(".tab-content")
+          .removeClass("active"),
+        t(this).addClass("active"),
+        t(this)
+          .parents(".tab-wrapper")
+          .find(".tab-content#" + t(this).attr("data-tab"))
+          .addClass("active"),
+        t(".tab-content.four-grid-carousel").flickity({
+          wrapAround: !0,
+          contain: !0,
+          lazyLoad: !0,
+          pageDots: !0,
+          prevNextButtons: !0,
+          imagesLoaded: !0,
+          cellAlign: "left",
+          lazyLoad: 4,
+          groupCells: !0,
+          resize: !0,
+        });
+    });
+}),
+  jQuery(document).ready(function () {
+    setInterval(function () {
+      jQuery(".four-grid-carousel").hasClass("flickity-enabled") &&
+        jQuery(".flickity-enabled").flickity("resize");
+    }, 100),
+      jQuery(".accr-wrap-table-content").length > 0 &&
+      (jQuery(
+        ".blog-details-container .accr-wrap-table-content .content"
+      ).append("<ul></ul>"),
+        jQuery(".blog-details-container .wrapper .left-cont h3").each(
+          function () {
+            var t = jQuery(this),
+              e = t
+                .text()
+                .replace(/[^a-z0-9\s]/gi, "")
+                .replace(/[_\s]/g, "_");
+            t.attr({ id: e }),
+              jQuery(
+                ".blog-details-container .accr-wrap-table-content .content ul"
+              ).append('<li><a href="#' + e + '">' + t.text() + "</a></li>");
+          }
+        ),
+        setTimeout(function () {
+          if (!window.matchMedia("(max-width: 767px)").matches) {
+          jQuery(".accr-wrap-table-content").find(".head").click();
+          }
+        }, 100)),
+      jQuery(document).on(
+        "click",
+        ".blog-details-container .accr-wrap-table-content .content ul li a",
+        function (t) {
+          t.preventDefault();
+          var e = jQuery(this.hash);
+          jQuery("html, body").animate(
+            { scrollTop: e.offset().top - 120 },
+            300
+          );
+        }
+      );
+    jQuery(document).on("click", ".search-a", function () {
+      var a = jQuery("body").addClass("search-active");
+      console.log(a);
+
+      // jQuery(".overlay-bg").css('display','block');
+    });
+    jQuery(document).on("click", ".btn-close", function () {
+      jQuery("body").removeClass("search-active");
+      jQuery(".overlay-bg").css("display", "none");
+    });
+
+    jQuery(window).scroll(function () {
+      var scrollTop = jQuery(window).scrollTop();
+      if (scrollTop > jQuery(window).height()) {
+        jQuery(".getInTouchBtn-container").fadeIn();
+      } else {
+        jQuery(".getInTouchBtn-container").fadeOut();
+      }
+    });
+  }),
+  jQuery(window).on("load", function () {
+    jQuery(".toggle-button svg").css(
+      "fill",
+      jQuery(".color-pallatte-details .color-code-wrap .color-circle").css(
+        "background-color"
+      )
+    );
+  });
+
+
+// waterproofing filters check and unchecked with active class code 
+//https://nerolacdev.interactiveavenues.net/waterproofing/new-construction
+document
+  .querySelectorAll(".filter-options-accr .content.radio ul li")
+  .forEach(function (li) {
+    // Event listener for clicks on <li> elements
+    li.addEventListener("click", function (event) {
+      applyProcess(li);
+    });
+
+    // Event listener for clicks on <span> elements within <li>
+    li.querySelectorAll(".field-content").forEach(function (span) {
+      span.addEventListener("click", function (event) {
+        applyProcess(li);
+      });
+    });
+  });
+
+function applyProcess(element) {
+  document
+    .querySelectorAll(".filter-options-accr .content.radio ul li")
+    .forEach(function (li) {
+      li.classList.remove("active");
+    });
+  element.classList.add("active");
+
+  var paintLists = document.querySelectorAll(
+    ".filter-options-accr .content.radio ul .paint-list"
+  );
+  paintLists.forEach(function (paintList) {
+    paintList.style.display = "none";
+  });
+
+  var nextPaintList = element.nextElementSibling;
+  if (nextPaintList && nextPaintList.classList.contains("paint-list")) {
+    nextPaintList.style.display = "block";
+  }
+}
+
+document.addEventListener("click", function (event) {
+  if (event.target.matches(".filter-options-accr .content.check ul li")) {
+    event.target.classList.toggle("active");
+  }
+});
+
+//scroll-up section (products) waterproofing
+document.querySelectorAll('.field-content').forEach(function(elem) {
+  elem.addEventListener('click', function() {
+      var topRowElement = document.querySelector('.top-row');
+      if (topRowElement) {
+        var scrollPosition = topRowElement.offsetTop - 100; 
+        window.scrollTo({ top: scrollPosition, behavior: 'smooth' });
+      }
+  });
+});
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  var divs = document.querySelectorAll(".color-slider .carousel-cell");
+  divs.forEach(function(div) {
+      var wallColour = div.getAttribute("data-wall-colour");
+      div.style.backgroundColor = wallColour;
+  });
+});

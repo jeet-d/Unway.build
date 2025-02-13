@@ -1,0 +1,603 @@
+jQuery(document).on("click",".inspirationclick",function () {
+	var title = jQuery(this).attr("data-title");
+	var pageURL = jQuery(location).attr("href");			
+	window.dataLayer = window.dataLayer || [];
+	window.dataLayer.push({
+		'event': 'Insipiration Viewed',  // Hardcode the event name
+		'Inspiration URL': pageURL,
+		'Inspiration Name': title
+	});			
+});
+
+
+jQuery(document).on("click",".colorscatalogueclick",function () {
+	var title = jQuery(this).attr("data-title");		
+	window.dataLayer = window.dataLayer || [];
+	window.dataLayer.push({
+		'event': 'Colors Catalogue Viewed',
+		'Catalogue Name': title
+	  });		
+});
+
+
+
+    jQuery('.popsearchclick').on('click', function(event) {
+        //event.preventDefault(); // Prevent the default action (optional)
+        
+        var hrefValue = jQuery(this).attr('href');  // Get the href value
+       	var anchorText = jQuery(this).text();       // Get the anchor text (text inside the <a> tag)
+        var url = window.location.href; // Get the current URL
+		var lastSegment = url.split('/').filter(Boolean).pop(); // Split the URL by '/' and get the last segment
+		if(lastSegment != ''){
+			lastSegment == 'Homepage';
+		}
+        //console.log("Href value: " + hrefValue);
+        //console.log("Anchor text: " + anchorText);
+        
+		window.dataLayer = window.dataLayer || [];
+			window.dataLayer.push({
+				'event': 'Popular Searches Viewed', // Hardcode the event name
+				'Search Name': anchorText, // pass the Search Name dynamically
+				'Search URL': hrefValue, // pass the Search URL dynamically 
+				'Page Name': lastSegment // pass the page name
+			});
+    });
+	
+	jQuery('.productcatclick').on('click', function(event) {
+        //event.preventDefault(); // Prevent the default action (optional)
+        var title = jQuery(this).attr("data-title");
+		var imageurl = jQuery(this).attr("data-img");		
+        var hrefValue = jQuery(this).attr('href');  // Get the href value
+		window.dataLayer = window.dataLayer || [];
+			window.dataLayer.push({
+				'event': 'Product Category Viewed', // Hardcode the event name
+				'Category Name': title,
+				'Category URL': hrefValue,
+				'Category Image URL': imageurl
+			});
+    });
+	
+	jQuery('.housepaintserviceview').on('click', function(event) {
+        //event.preventDefault(); // Prevent the default action (optional)        	
+        var hrefValue = jQuery(this).attr('href');  // Get the href value
+		var locationText = jQuery(this).find('.location').text().trim();
+		window.dataLayer = window.dataLayer || [];
+			window.dataLayer.push({
+				'event': 'House Painting Services Viewed', // Hardcode the event name
+				'House Painting Services': locationText,
+				'House Painting Services URL': hrefValue,
+				'Page Name': 'painting-services'
+			});
+    });
+	
+	jQuery('.blogclick').on('click', function(event) {
+        //event.preventDefault(); // Prevent the default action (optional) 
+		var title = jQuery(this).attr("data-title");
+        var hrefValue = jQuery(this).attr('href');  // Get the href value
+		var imgSrc = jQuery(this).closest('.wrap').find('img').attr('src');
+		var url = window.location.href; // Get the current URL
+		var lastSegment = url.split('/').filter(Boolean).pop(); // Split the URL by '/' and get the last segment
+		if(lastSegment != ''){
+			lastSegment == 'Homepage';
+		}
+		window.dataLayer = window.dataLayer || [];
+			window.dataLayer.push({
+				'event': 'Blog Viewed',
+				'Page Name': lastSegment,
+				'Blog Name': title,
+				'Blog URL': hrefValue,
+				'Blog Image': imgSrc
+			});
+    });
+	
+	jQuery('.blogpageclick').on('click', function(event) {
+        //event.preventDefault(); // Prevent the default action (optional) 
+		var title = jQuery(this).attr("data-title");
+        var hrefValue = jQuery(this).attr('href');  // Get the href value
+		var imgSrc = jQuery(this).closest('.nerolac-card').find('.wrap img').attr('src');
+		var url = window.location.href; // Get the current URL
+		var lastSegment = url.split('/').filter(Boolean).pop(); // Split the URL by '/' and get the last segment
+		if(lastSegment != ''){
+			lastSegment == 'Homepage';
+		}
+		window.dataLayer = window.dataLayer || [];
+			window.dataLayer.push({
+				'event': 'Blog Viewed',
+				'Page Name': lastSegment,
+				'Blog Name': title,
+				'Blog URL': hrefValue,
+				'Blog Image': imgSrc
+			});
+    });
+	
+	
+	
+	jQuery('.storeclick').on('click', function(event) {
+        //event.preventDefault(); // Prevent the default action (optional) 
+		var title = jQuery(this).closest('.card').find('.card-first').data('title');
+		var address = jQuery(this).closest('.card').find('.card-first').data('body');
+		var mobile = jQuery(this).closest('.card').find('.card-first').data('mobile');
+        var hrefValue = jQuery(this).attr('href');  // Get the href value
+		var url = window.location.href; // Get the current URL
+		var lastSegment = url.split('/').filter(Boolean).pop(); // Split the URL by '/' and get the last segment
+		if(lastSegment != ''){
+			lastSegment == 'Homepage';
+		}
+		window.dataLayer = window.dataLayer || [];
+			window.dataLayer.push({
+				'event': 'Store Viewed',
+				'Store Name': title,
+				'Store Address': address,
+				'Store Contact': mobile,
+				'Store Services': 'NXTGen Home Painting Services, Waterproofing Services, Illuminati Club - Find Contrator',
+				'Store Direction URL': hrefValue
+			});
+    });
+	
+	jQuery('.nerolaccityview').on('click', function(event) {
+        //event.preventDefault(); // Prevent the default action (optional) 
+		var state = jQuery(this).data('state');
+		var city = jQuery(this).data('city'); 
+		var storeCount = jQuery(this).data('storecount');
+		window.dataLayer = window.dataLayer || [];
+			window.dataLayer.push({
+				'event': 'Nerolac Store Viewed',
+				'City Name': city,
+				'Store Count': storeCount,
+				'State': state
+		});
+    });
+	
+	
+	jQuery('.nextgenservclick').on('click', function(event) {
+        //event.preventDefault(); // Prevent the default action (optional) 	
+		console.log('Nxtgen service viewed');
+		window.dataLayer = window.dataLayer || [];
+		window.dataLayer.push({
+			'event': 'Nxtgen service viewed'
+		});
+    });
+	
+	jQuery('.colourcatview').on('click', function(event) {
+		var hrefValue = jQuery(this).attr('href');  // Get the href value
+		var anchorText = jQuery(this).text().trim();
+		var title = jQuery(this).attr("data-title"); 		
+		window.dataLayer = window.dataLayer || [];
+		window.dataLayer.push({
+			'event': 'Color category viewed',
+			'Category name': title,
+			'Page URL': hrefValue
+		});
+	});
+	
+	jQuery('.toolsview').on('click', function(event) {
+		//alert('toolsview');
+		var hrefValue = jQuery(this).attr('href');  // Get the href value
+		var anchorText = jQuery(this).text().trim();
+		var title = jQuery(this).attr("data-title"); 		
+		window.dataLayer = window.dataLayer || [];
+		window.dataLayer.push({
+			'event': 'Tools viewed',
+			'Category name': title,
+			'Page URL': hrefValue
+		});
+	});
+	
+	jQuery('#interior-btn').on('click', function(event) {
+		window.dataLayer = window.dataLayer || [];
+		window.dataLayer.push({
+			'event': 'Product Comparison tool',
+			'Sub Category name': 'Interior'
+		});
+	});
+	
+	jQuery('#exterior-btn').on('click', function(event) {
+		window.dataLayer = window.dataLayer || [];
+		window.dataLayer.push({
+			'event': 'Product Comparison tool',
+			'Sub Category name': 'Exterior'
+		});
+	});
+	
+	jQuery('.colourcatalogueclick').on('click', function(event) {
+		var hrefValue = jQuery(this).attr('href'); 
+		var title = jQuery(this).attr("data-title"); 
+		window.dataLayer = window.dataLayer || [];
+		window.dataLayer.push({
+			'event': 'Colour Catalogue',
+			'Colour name': title,
+			'Page URL': hrefValue
+		});
+	});
+	
+	jQuery('.commoncolourclick').on('click', function(event) {
+		var hrefValue = jQuery(this).attr('href'); 
+		var title = jQuery(this).find('.color-name').text(); 
+		var colourcode = jQuery(this).attr("data-colourcode"); 
+		window.dataLayer = window.dataLayer || [];
+		window.dataLayer.push({
+			'event': 'Common colour shades',
+			'Colour name': title,
+			'Page URL': hrefValue,
+			'Colour code': colourcode
+		});
+	});
+	
+	jQuery('.subcolourcatalogueclick').on('click', function(event) {
+		var hrefValue = jQuery(this).attr('href'); 
+		var title = jQuery(this).attr("data-title"); 
+		var colourcode = jQuery(this).attr("data-colourcode"); 
+		var colourname = jQuery(".primarycolour").text();
+		window.dataLayer = window.dataLayer || [];
+		window.dataLayer.push({
+			'event': 'Sub colour catalogue',
+			'Colour name': colourname,
+			'Sub colour name': title,
+			'Sub colour code': colourcode,
+			'Page URL': hrefValue
+		});
+	});
+	
+	jQuery('.faqclick').on('click', function() {
+		var headText = jQuery(this).text().trim();  // Get the text from the clicked FAQ head
+		var contentText = jQuery(this).next('.content').text().trim();  // Get the text from the associated content
+		var url = window.location.href; // Get the current URL
+		var lastSegment = url.split('/').filter(Boolean).pop(); // Split the URL by '/' and get the last segment
+		if(lastSegment != ''){
+			lastSegment == 'Homepage';
+		}
+		//console.log('Head Text: ' + headText);  // For debugging or further use
+		//console.log('Content Text: ' + contentText);
+
+		window.dataLayer = window.dataLayer || [];
+		window.dataLayer.push({
+			'event': 'FAQs Viewed',
+			'FAQ Name': headText,
+			'FAQ Answer': contentText,
+			'Page Name': lastSegment
+		});
+	});
+	
+	jQuery('#getInTouchBtn').on('click', function() {
+		window.dataLayer = window.dataLayer || [];
+		window.dataLayer.push({
+			'event': 'GIT Initiated'
+		});
+	});
+	
+	jQuery('.lookingfor').on('change', function() {
+        // Get the selected value
+        var selectedValue = jQuery(this).val();
+        //console.log('Selected value:', selectedValue);
+		var url = window.location.href; // Get the current URL
+		var lastSegment = url.split('/').filter(Boolean).pop(); // Split the URL by '/' and get the last segment
+		if(lastSegment != ''){
+			lastSegment == 'Home';
+		}
+		window.dataLayer = window.dataLayer || [];
+		window.dataLayer.push({
+			'event': 'GIT Initiated',
+			'Page name': lastSegment,
+			'Query name': selectedValue
+		});
+    });
+	
+	jQuery('.gitstickylookingfor').on('change', function() {
+        // Get the selected value
+        var selectedValue = jQuery(this).val();
+        //console.log('Selected value:', selectedValue);
+		var url = window.location.href; // Get the current URL
+		var lastSegment = url.split('/').filter(Boolean).pop(); // Split the URL by '/' and get the last segment
+		if(lastSegment != ''){
+			lastSegment == 'Home';
+		}
+		window.dataLayer = window.dataLayer || [];
+		window.dataLayer.push({
+			'event': 'GIT Initiated',
+			'Page name': lastSegment,
+			'Query name': selectedValue
+		});
+    });
+	
+	
+	
+	jQuery('.productcatview').on('click', function() {
+		var productAnchorText = jQuery(this).text();  // Get the anchor text of the clicked product link
+		var menuAnchorText = jQuery(this).closest('.block').find('.has-sub-menu a').text();
+		window.dataLayer = window.dataLayer || [];
+		window.dataLayer.push({
+			'event': 'Product_Category_Viewed',
+			'L1 Category Name': 'Paints & Product',
+			'L2 Category Name': menuAnchorText,
+			'L3 Category Name': productAnchorText
+		});
+	});
+	
+	jQuery('.productmaincatview').on('click', function() {
+		var productAnchorText = jQuery(this).text();  // Get the anchor text of the clicked product link
+		//var menuAnchorText = jQuery(this).closest('.block').find('.has-sub-menu a').text();
+		window.dataLayer = window.dataLayer || [];
+		window.dataLayer.push({
+			'event': 'Product_Category_Viewed',
+			'L1 Category Name': 'Paints & Product',
+			'L2 Category Name': productAnchorText
+		});
+	});
+	
+	jQuery(".getintouch").on('click', function() {
+		var error = false;
+		var lookingforValue = jQuery('.lookingfor').val();
+		var msg = jQuery('.gitmessage').val();
+		var name = jQuery('.gitname').val();
+		var mobile = jQuery('.gitmobile').val();
+		var email = jQuery('.gitemail').val();
+		var pincode = jQuery(".gitpincode").val();
+		var isChecked = jQuery(".gittnc").is(":checked");
+		if (isChecked) {
+								var waopt = 1;
+							} else {
+								var waopt = 0;
+							}
+		var url = window.location.href; // Get the current URL
+		var lastSegment = url.split('/').filter(Boolean).pop(); // Split the URL by '/' and get the last segment
+		if(lastSegment != ''){
+			lastSegment == 'Home';
+		}
+		if (lookingforValue === "") {
+			return true;
+		}
+		if (pincode === "") {
+			return true;
+		}
+		if (error == true) {
+			return false;
+		}else{			
+			webengage.user.login(mobile);
+			webengage.user.setAttribute('we_phone', mobile);
+			if(waopt == 1){
+				webengage.user.setAttribute('we_whatsapp_opt_in', true);
+			}
+			else{
+				webengage.user.setAttribute('we_whatsapp_opt_in', false);
+			}	
+			webengage.user.setAttribute('we_email', email);
+			webengage.user.setAttribute('we_first_name',name);
+			window.dataLayer = window.dataLayer || [];
+			window.dataLayer.push({
+				'event': 'GIT Form Submitted',
+				'Page Name': lastSegment,
+				'Purpose': lookingforValue,
+				'Message': msg,
+				'Pincode': pincode
+			});	
+		}
+	});
+	
+	jQuery(".gitstickysubmit").on('click', function() {
+		var error = false;
+		var lookingforValue = jQuery('.gitstickylookingfor').val();
+		var msg = jQuery('.gitstickymsg').val();
+		var name = jQuery('.gitstickyname').val();
+		var mobile = jQuery('.gitstickymobile').val();
+		var email = jQuery('.gitstickyemail').val();
+		var pincode = parseInt(jQuery(".gitstickypincode").val(), 10);
+		var isChecked = jQuery(".gitstickytnc").is(":checked");
+		if (isChecked) {
+								var waopt = 1;
+							} else {
+								var waopt = 0;
+							}
+		var url = window.location.href; // Get the current URL
+		var lastSegment = url.split('/').filter(Boolean).pop(); // Split the URL by '/' and get the last segment
+		if(lastSegment != ''){
+			lastSegment == 'Home';
+		}
+		if (lookingforValue === "") {
+			return true;
+		}
+		if (isNaN(pincode)) { // Check if pincode is a valid number
+        return true;
+		}
+		if (error == true) {
+			return false;
+		}else{			
+			webengage.user.login(mobile);
+			webengage.user.setAttribute('we_phone', mobile);
+			if(waopt == 1){
+				webengage.user.setAttribute('we_whatsapp_opt_in', true);
+			}
+			else{
+				webengage.user.setAttribute('we_whatsapp_opt_in', false);
+			}	
+			webengage.user.setAttribute('we_email', email);
+			webengage.user.setAttribute('we_first_name',name);
+			window.dataLayer = window.dataLayer || [];
+			window.dataLayer.push({
+				'event': 'GIT Form Submitted',
+				'Page Name': lastSegment,
+				'Purpose': lookingforValue,
+				'Message': msg,
+				'Pincode': pincode
+			});	
+		}
+	});
+	
+	jQuery(".subscribesubmit").on('click', function() {
+		var error = false;
+		var email = jQuery('.subemail').val();
+		var url = window.location.href; // Get the current URL
+		var lastSegment = url.split('/').filter(Boolean).pop(); // Split the URL by '/' and get the last segment
+		if(lastSegment != ''){
+			lastSegment == 'Home';
+		}
+		if (email === "") {
+			return true;
+		}
+		if (error == true) {
+			return false;
+		}else{
+			webengage.user.setAttribute('we_email', email);
+			window.dataLayer = window.dataLayer || [];
+			window.dataLayer.push({
+				'event': 'Subscribe Initiated',
+				'Page Name': lastSegment,
+			});	
+		}
+	});
+	
+	
+	jQuery(".paintingexpertsubmit").on('click', function() {
+		var error = false;
+		var name = jQuery('.paintingexpertname').val();
+		var mobile = jQuery('.paintingexpertmobile').val();
+		var city = jQuery(".paintingexpertcity").val();
+		var email = jQuery('.paintingexpertemail').val();
+		var pincode = parseInt(jQuery(".gitstickypincode").val(), 10);
+		var url = window.location.href; // Get the current URL
+		var lastSegment = url.split('/').filter(Boolean).pop(); // Split the URL by '/' and get the last segment
+		if(lastSegment != ''){
+			lastSegment == 'Home';
+		}
+		if (city === "") {
+			return true;
+		}
+		if (pincode === "") {
+			return true;
+		}
+		if (error == true) {
+			return false;
+		}else{
+			webengage.user.login(mobile);
+			webengage.user.setAttribute('we_phone', mobile);			
+			webengage.user.setAttribute('we_email', email);
+			webengage.user.setAttribute('we_first_name',name);
+			window.dataLayer = window.dataLayer || [];
+			window.dataLayer.push({
+				'event': 'Interest Form Submitted',
+				'Page Name': lastSegment,
+				'City': city,
+				'Pincode': pincode
+			});	
+		}
+	});
+	
+	jQuery(".nextgenpaintformsubmit").on('click', function() {
+		var error = false;
+		var name = jQuery('.nextgenpaintformname').val();
+		var mobile = jQuery('.nextgenpaintformmobile').val();
+		var email = jQuery('.nextgenpaintformemail').val();
+		var pincode = jQuery(".nextgenpaintformpincode").val();
+		var isChecked = jQuery(".nextgenpaintformtnc").is(":checked");
+		if (isChecked) {
+								var waopt = 1;
+							} else {
+								var waopt = 0;
+							}
+		var url = window.location.href; // Get the current URL
+		var lastSegment = url.split('/').filter(Boolean).pop(); // Split the URL by '/' and get the last segment
+		if(lastSegment != ''){
+			lastSegment == 'Home';
+		}
+		if (name === "") {
+			return true;
+		}
+		if (email === "") {
+			return true;
+		}
+		if (mobile === "") {
+			return true;
+		}
+		if (pincode === "") {
+			return true;
+		}
+		if (error == true) {
+			return false;
+		}else{
+			webengage.user.login(mobile);
+			webengage.user.setAttribute('we_phone', mobile);
+			if(waopt == 1){
+				webengage.user.setAttribute('we_whatsapp_opt_in', true);
+			}
+			else{
+				webengage.user.setAttribute('we_whatsapp_opt_in', false);
+			}			
+			webengage.user.setAttribute('we_email', email);
+			webengage.user.setAttribute('we_first_name',name);
+			window.dataLayer = window.dataLayer || [];
+			window.dataLayer.push({
+				'event': 'NXTGEN services form submitted',
+				'Page Name': lastSegment
+			});	
+		}
+	});
+	
+	jQuery("#knowsstarted").on('click', function() {
+		console.log('hi');
+		window.dataLayer = window.dataLayer || [];
+		window.dataLayer.push({
+		'event': 'Get started'
+		});	
+		
+	});
+	
+	jQuery(document).on("click", "#steponeclick", function() {	
+		console.log("Step one click");
+		var hometype = jQuery(this).attr("data-title");
+		localStorage.setItem('hometype', hometype);
+		window.dataLayer = window.dataLayer || [];
+		window.dataLayer.push({
+		'event': 'Home Preference Submitted',
+		'Home Type': hometype
+		});			
+	});
+	
+	jQuery(document).on("click", "#steptwoclick", function() {
+		console.log("Step two click");
+		var propertytype = jQuery(this).attr("data-title");
+		var hometype = localStorage.getItem("hometype");
+		localStorage.setItem('propertytype', propertytype);
+		window.dataLayer = window.dataLayer || [];
+		window.dataLayer.push({
+		'event': 'Property Age Submitted',
+		'Home Type': hometype,
+		'Property Age': propertytype
+		});			
+	});
+	
+	jQuery(document).on("click", "#stepthreeclick", function() {
+		console.log("Step three click");
+		var structure = jQuery(this).attr("data-title");
+		var hometype = localStorage.getItem("hometype");
+		var propertytype = localStorage.getItem("propertytype");
+		localStorage.setItem('structure', structure);
+		window.dataLayer = window.dataLayer || [];
+		window.dataLayer.push({
+		'event': 'Area Submitted',
+		'Home Type': hometype,
+		'Property Age': propertytype,
+		'Structure': structure
+		});			
+	});
+	
+	jQuery(document).on("click", "#stepfourclick", function() {
+		console.log("Step four click");
+		var damagearea = jQuery(this).attr("data-title");
+		var hometype = localStorage.getItem("hometype");
+		var propertytype = localStorage.getItem("propertytype");
+		var structure = localStorage.getItem("structure");
+		localStorage.setItem('damagearea', damagearea);
+		window.dataLayer = window.dataLayer || [];
+		window.dataLayer.push({
+		'event': 'Area Submitted',
+		'Home Type': hometype,
+		'Property Age': propertytype,
+		'Structure': structure,
+		'Damages area': damagearea
+		});			
+	});
+	
+	
+
+	
+	
+

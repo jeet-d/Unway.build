@@ -1,0 +1,821 @@
+var site_origin = window.location.origin, site_url = site_origin + "/";
+var mlangCode = drupalSettings.path.currentLanguage;
+if (mlangCode == 'en') { langCode = ''; } else { langCode = mlangCode + "/"; }
+jQuery('#edit-i-agree-to-the-terms-of-service-and-privacy-policy-yes-i-would-l').prop('checked', true);
+jQuery(document).ready(function($) {
+    $(".user-login-form").wrap("<div class='container' style='text-align:center;'></div>");
+    $(".user-login-form").css("margin-top", "150px");
+    $(".user-login-form").prepend("<h1>Login</h1>");
+    $(".user-login-form #edit-submit").addClass("btn btn-outline-primary");
+	$(".surface_filter li:first").addClass("active");
+	var fwpelement = $(".surface_filter li:first").find("div span div").html();
+	if(fwpelement != ''){
+		$(".wp_surface_token").html("<li>"+fwpelement+"</li>");
+	}
+	$("#webform-submission-painting-service-otp-node-11553-add-form, #webform-submission-painting-advaisor-program-otp-node-11555-add-form, #webform-submission-painting-advaisor-program-otp-node-12437-add-form").hide();
+	var searchParams = new URLSearchParams(window.location.search);
+	if(searchParams.has('form1')) {
+		$("#webform-submission-painting-service-otp-node-11553-add-form").show();
+		$("#webform-submission-painting-services-node-11553-add-form").hide();
+	}else{
+		$("#webform-submission-painting-service-otp-node-11553-add-form").hide();
+		$("#webform-submission-painting-services-node-11553-add-form").show();
+	}
+	if(searchParams.has('form2')) {
+		$("#webform-submission-painting-advaisor-program-otp-node-11555-add-form").show();
+		$("#webform-submission-painting-advaisor-program-node-11555-add-form").hide();
+	}else{
+		$("#webform-submission-painting-advaisor-program-otp-node-11555-add-form").hide();
+		$("#webform-submission-painting-advaisor-program-node-11555-add-form").show();
+	}
+	
+	if(searchParams.has('form3')) {
+		$("#webform-submission-nextgen-painting-service-otp-node-11734-add-form").show();
+		$("#webform-submission-nextgen-painting-services-node-11734-add-form").hide();
+				
+	}else{
+		$("#webform-submission-nextgen-painting-service-otp-node-11734-add-form").hide();
+		$("#webform-submission-nextgen-painting-services-node-11734-add-form").show();
+		
+	}
+	if(searchParams.has('form4')) {
+		$("#webform-submission-painting-service-new-otp-node-12437-add-form").show();
+		$("#webform-submission-painting-services-new-node-12437-add-form").hide();
+	}else{
+		$("#webform-submission-painting-service-new-otp-node-12437-add-form").hide();
+		$("#webform-submission-painting-services-new-node-12437-add-form").show();
+	}
+	if(searchParams.has('form6')) {
+		//$("#webform-submission-painting-service-otp-city-based-taxonomy-term-1030-add-form").show();
+		//$("#webform-submission-painting-services-city-based-taxonomy-term-1030-add-form").hide();
+		//$("#webform-submission-painting-service-otp-city-based-taxonomy-term-1048-add-form").show();
+		//$("#webform-submission-painting-services-city-based-taxonomy-term-1048-add-form").hide();
+		$(".webform-submission-painting-services-city-based-form").hide();
+		$(".webform-submission-painting-service-otp-city-based-form").show();
+	}else{
+		//$("#webform-submission-painting-service-otp-city-based-taxonomy-term-1030-add-form").hide();
+		//$("#webform-submission-painting-services-city-based-taxonomy-term-1030-add-form").show();
+		//$("#webform-submission-painting-service-otp-city-based-taxonomy-term-1048-add-form").hide();
+		//$("#webform-submission-painting-services-city-based-taxonomy-term-1048-add-form").show();
+		$(".webform-submission-painting-services-city-based-form").show();
+		$(".webform-submission-painting-service-otp-city-based-form").hide();
+	}
+	
+	/*const currentURL = window.location.href;
+ 	const searchTerm = "store-locator";
+	if(currentURL.includes(searchTerm) && $(".store-locator-result").length) {
+		$.ajax({
+			type: "post",
+			url: site_url+'views/ajax?_wrapper_format=drupal_ajax',
+			data: "view_name=store_locator&view_display_id=block_1&_drupal_ajax=1&ajax_page_state[theme]=nerolac",
+			success: function (result) {
+				for (var i = 0; i <result.length; i++) {
+					if(result[i].command == 'insert' && result[i].method == 'replaceWith'){
+						$(".store-locator-result").html(result[i].data);
+						
+					}
+				}
+			}
+		});
+	}*/
+	
+	// $(".spotlight-home").attr("data-flickity","{ 'wrapAround': true, 'prevNextButtons': false, 'setGallerySize': false, 'lazyLoad': true, 'pageDots': true, 'draggable': true }");
+    // $('.spotlight-home').flickity({
+    // wrapAround: 'true',
+    // prevNextButtons: false,
+    // setGallerySize: false,
+    // lazyLoad: true,
+    // pageDots: true,
+    // draggable: true,
+    // });
+    $("#calculator").click(function(e) {
+        e.preventDefault();
+        let space, project, paintrequired, area, sqperlitre;
+        area = $("input[name='carpet_area']").val();
+        project = $("input[name='project']:checked").val();
+        space = $("input[name='space']:checked").val();
+
+        if (project == 'repaint') {
+            sqperlitre = 13;
+        } else if (project == 'fresh') {
+            sqperlitre = 11;
+        } else {
+            sqperlitre = 1;
+        }
+
+        paintrequired = area / sqperlitre;
+
+        if (paintrequired) {
+            console.log('pr' + paintrequired);
+            $('#cal_result').html('<div class="success">' + paintrequired.toFixed(2) + ' Litres of paint is required</div>');
+        } else {
+            $('#cal_result').html('<div class="error"> Something went wrong try againg</div>');
+        }
+    });
+
+    if ($(".pager__items").length) {
+        $(".pager__items").unwrap('nav');
+        $(".pager__items").wrap('<div class="pagination">');
+        $(".pager__items").removeClass();
+    }
+    $("#views-exposed-form-awards-block-1").hide();
+    $(".section-header .sort-by-wrap").html($("#views-exposed-form-awards-block-1 select").clone());
+    $(document).on("change", ".section-header .sort-by-wrap select", function() {
+        $("#views-exposed-form-awards-block-1 select").val($(this).val());
+        $("#views-exposed-form-awards-block-1").submit();
+    });
+
+    var title = $.trim($(".section-header h1").text());
+    $(".investor-left-filter li").each(function() {
+        var lival = $.trim($(this).text());
+
+        if (lival == title) {
+            //alert(title);
+            $(this).addClass("active");
+        }
+
+    });
+
+    // Switch tab script
+    $(".switchTab").change(function(e) {
+        var t = $(this).find("option:selected").index(),
+            o = $(this).attr("trgt-tab"),
+            a = $("#" + o).find("li").eq(t).find("a").attr("href");
+            // $("#" + o + ' a[href="' + a + '"]').tab("show");
+        $(".tab-pane").removeClass("in active");
+        $(".tab-pane").addClass("tabhide");
+
+        $(a).addClass("in active");
+        $(a).removeClass("tabhide");
+            
+        // $("#" + o + ' a[href="' + a + '"]').tabs("show");
+        // $(this).parents(".select-year-wrap").siblings(".tab-content").children(".tab-pane").removeClass("in active");
+        // $(this).parents(".select-year-wrap").siblings(".tab-content").children(a).addClass("in active");
+
+    });
+    $("#webform-submission-get-in-touch-node-11514-add-form #edit-what-are-you-looking-for-").parent().addClass('col-lg-6');
+
+    //used in colour share detail page
+    /*if ($('#maincolor').length) {
+        $('#maincolor').prependTo('.pallette-wrap ul');
+        //alert($("#maincolor").css('background'));
+        $('.region-header').addClass('d-none');
+        $('.svg-click-for-preview').css('fill', $("#field_shade_hex_code").text());
+        $('.image-div').css('backgroundColor', $("#field_shade_hex_code").text());
+        $(document).on('click', '.color-change-button', function() {
+            var background = $(this).find('.innercircle').css('backgroundColor');
+            var shadeCode = $(this).attr("data-shade_code");
+            var shadeHexCode = $(this).attr("id");
+            var shadeName = $(this).attr("data_shade_name");
+            var shadeUrl = $(this).attr("data-url");
+            $('.selected-color').css('backgroundColor', background);
+            $('.selected-color-code-name').text("Colour Code - " + shadeCode);
+            $('.selected-color-title').text(shadeName);
+            $('.page_title').text(shadeName);
+            $('.selected-hex-color').text(shadeHexCode);
+
+            window.history.pushState("", "", shadeUrl);
+            $('.color-change-button').removeClass('active');
+            $(this).addClass('active');
+            $('.svg-click-for-preview').attr('fill-opacity', '50');
+            $('.svg-click-for-preview').css('fill', background);
+            $('.image-div').css('backgroundColor', background);
+        });
+
+        $("#slider_desc_toogler").on("click", function() {
+            $(this).toggleClass('read-more')
+            $(this).toggleClass('read-less')
+            if ($(this).hasClass("read-more")) {
+                $(".slider_desc").css("max-height", "70px");
+                $(this).text("Read More");
+            } else {
+                $(".slider_desc").css("max-height", "100%");
+                $(this).text("Read Less");
+            }
+        });
+
+        $(document).on('load', function() {
+            $('.svg-click-for-preview').css('fill', '#99c1bf');
+        });
+        if ($(window).width() <= 767) {
+            $('.even .border-right').removeClass('border-right');
+            $('.diffrent-combination').find('*').removeClass('m-3');
+        }
+        $('#imageSwap').change(function(event) {
+            if (event.target.checked) {
+                $('.image-div svg').fadeTo(500, 0);
+            } else {
+                $('.image-div svg').fadeTo(500, 1);
+            }
+        });
+    }*/
+	
+	if ($('#maintwocolor').length) {
+        $('#maintwocolor').prependTo('.pallette-wrap ul');
+        //alert($("#maincolor").css('background'));
+        $('.region-header').addClass('d-none');
+        //$('.svg-click-for-preview').css('fill', $("#field_shade_hex_code").text());
+		$('#l_poly51,#l_poly52,#l_poly53,#l_poly55,#l_poly56').css('fill', $("#field_secondary_shade_hex_code").text());
+		$('#l_poly54').css('fill', $("#field_primary_shade_hex_code").text());
+		
+        $('.image-div').css('backgroundColor', $("#field_primary_shade_hex_code").text());
+        $(document).on('click', '.color-change-button', function() {
+            var background = $(this).find('.innercircle').css('backgroundColor');
+            var shadeCode = $(this).attr("data-shade_code");
+            var shadeHexCode = $(this).attr("id");
+            var shadeName = $(this).attr("data_shade_name");
+            var shadeUrl = $(this).attr("data-url");
+            $('.selected-color').css('backgroundColor', background);
+            $('.selected-color-code-name').text("Colour Code - " + shadeCode);
+            $('.selected-color-title').text(shadeName);
+            $('.page_title').text(shadeName);
+            $('.selected-hex-color').text(shadeHexCode);
+
+            window.history.pushState("", "", shadeUrl);
+            $('.color-change-button').removeClass('active');
+            $(this).addClass('active');
+            $('.svg-click-for-preview').attr('fill-opacity', '50');
+            $('.svg-click-for-preview').css('fill', background);
+            $('.image-div').css('backgroundColor', background);
+        });
+
+        $("#slider_desc_toogler").on("click", function() {
+            $(this).toggleClass('read-more')
+            $(this).toggleClass('read-less')
+            if ($(this).hasClass("read-more")) {
+                $(".slider_desc").css("max-height", "70px");
+                $(this).text("Read More");
+            } else {
+                $(".slider_desc").css("max-height", "100%");
+                $(this).text("Read Less");
+            }
+        });
+
+        $(document).on('load', function() {
+            $('.svg-click-for-preview').css('fill', '#99c1bf');
+        });
+        if ($(window).width() <= 767) {
+            $('.even .border-right').removeClass('border-right');
+            $('.diffrent-combination').find('*').removeClass('m-3');
+        }
+        $('#imageSwap').change(function(event) {
+            if (event.target.checked) {
+                $('.image-div svg').fadeTo(500, 0);
+            } else {
+                $('.image-div svg').fadeTo(500, 1);
+            }
+        });
+    }
+
+	if($(".nav-tabs li").length)
+	{
+		tabid = $(".nav-tabs li").eq(0).find("a").data("href");
+		$(".col").hide();
+		$("."+tabid).fadeIn();
+		
+		$(".nav-tabs li").click(function(){
+			$(".nav-tabs li").removeClass("active");
+			$(this).addClass("active");
+			
+			tabid = $(this).find("a").data("href");
+			$(".col").hide();
+			$("."+tabid).fadeIn();
+			
+		});
+	}
+	
+	if($(".idea-gallery").length)
+	{
+		tid = $(".section-header").data("attr");
+		
+		$(".tid-"+tid).addClass("active");
+	}
+	
+	//store locator states and cities
+	
+	if($(".statesdropdown").length)
+	{
+		
+		$.getJSON( "/jsonapi/states", function( data ) {
+		  var statedrop = '<select class="form-select shadow-none nobg statesdropdown"><option value="">Select State</option>';
+		  $.each( data, function( key, val ) {
+			statedrop += '<option value="'+ val['tid'] +'***'+val['view_taxonomy_term']+'">'+ val['name'] +'</option>';
+		  });
+		  statedrop += '</select>';
+		  //alert(statedrop);
+		  $('#statesdropdown').html(statedrop);
+		});
+		
+		$(document).on("change",".statesdropdown",function(){
+			var state = $(this).val();
+			if(state != '')
+			{
+				var stateval = state.split("***");
+				var tid = stateval[0];
+				
+				$.getJSON( "/jsonapi/cities/"+tid, function( data ) {
+				  var statedrop = '<select class="form-select shadow-none nobg citiesdropdown"><option value="">Select City / District</option>';
+				  $.each( data, function( key, val ) {
+					statedrop += '<option value="'+ val['tid'] +'***'+val['view_taxonomy_term']+'">'+ val['name'] +'</option>';
+				  });
+				  statedrop += '</select>';
+				  //alert(statedrop);
+				  $('#citiesdropdown').html(statedrop);
+				});
+				
+				
+			}
+		});
+		
+		$(".locatebtn").click(function(){
+			var state = $(".statesdropdown").val();
+			var city = $(".citiesdropdown").val();
+			var selectedStateText = $('.statesdropdown option:selected').text();
+			var selectedCityText = $('.citiesdropdown option:selected').text();
+			var url = window.location.href; // Get the current URL
+			var lastSegment = url.split('/').filter(Boolean).pop(); // Split the URL by '/' and get the last segment
+			if(lastSegment != ''){
+				lastSegment == 'Homepage';
+			}
+			
+			if(state == '' && city == '')
+			{
+				alert("Please select state");
+				$(".statesdropdown").focus();
+			}
+			else if(state!='' && city!='')
+			{
+				citival = city.split("***");
+				window.dataLayer = window.dataLayer || [];
+				window.dataLayer.push({
+					'event': 'Find a Paint Store', // Hardcode the event name
+					'State': selectedStateText,
+					'City': selectedCityText,
+					'Page Name': lastSegment
+				});
+				window.location = citival[1];
+			}
+			else
+			{
+				citival = state.split("***");
+				window.location = citival[1];
+			}
+			
+		});
+	}
+	$("#views-exposed-form-product-display-for-listing-page-block-1").hide();
+	$('.pro-range-filter ul li:eq(0)').before('<li><div id="All" class="rfilter-container">All Range</div></li>');
+	$('.pro-finish-filter ul li:eq(0)').before('<li><div id="" class="pffilter-container">All Finish</div></li>');
+	$('.pro-data-filter ul li:eq(0)').before('<li><div id="All" class="ptfilter-container">All Data</div></li>');
+	
+	$(document).on('click', '.pro-range-filter ul li', function() {
+		$('.filter-tokens').empty();
+		$('.pro-finish-filter ul li.active').removeClass('active');
+		$('.pro-data-filter ul li.active').removeClass('active');
+		var sid = $(this).find('.rfilter-container').attr("id");
+		var sval = $(this).find('.rfilter-container').html();
+		var paint_type = $("#prid").val();
+		if($('.filter-tokens li').length > 0){
+			$('.filter-tokens ul').append('<li class="range-token">'+sval+'<div class="close rmfilter" id="'+sid+'"></div></li>');
+		}else{
+			$('.filter-tokens').append('<ul><li class="range-token">'+sval+'<div class="close rmfilter" id="'+sid+'"></div></li></ul>');
+		}
+		$.ajax({
+			type: "post",
+			url: site_url+'views/ajax?_wrapper_format=drupal_ajax',
+			data: "field_product_category_target_id="+sid+"&view_name=product_display_for_listing_page&view_display_id=block_1&view_args="+paint_type+"&_drupal_ajax=1&ajax_page_state[theme]=nerolac",
+			success: function(result) {
+				for (var i = 0; i <result.length; i++) {
+					if(result[i].command == 'insert' && result[i].method == 'replaceWith'){
+						if(result[i].data.indexOf("product-card") != -1){
+							$(".prod_listing_container").html(result[i].data);
+						}else{
+							$(".prod_listing_container").html('No Product Found!');
+						}
+						$("#views-exposed-form-product-display-for-listing-page-block-1").hide();
+						
+					}
+				}
+				if($(".prod_listing_container").length){
+					$(".views-infinite-scroll-content-wrapper").addClass("row g-lg-4 row-cols-lg-3 row-cols-1");
+				}
+			}
+		});
+	});
+	
+	$(document).on('click', '.pro-finish-filter ul li', function() {
+		var rid = $('.pro-range-filter ul li').find(".active").attr("id");
+		if(rid === undefined){
+			rid = 'All';
+		}
+		var sid = $(this).find('.pffilter-container').attr("id");
+		var sval = $(this).find('.pffilter-container').html();
+		var paint_type = $("#prid").val();
+		if ( !$('.filter-tokens ul li:contains("'+sval+'")').length ) {
+			$('.finish-token').remove();
+			if($('.filter-tokens li').length > 0){
+				$('.filter-tokens ul').append('<li class="finish-token">'+sval+'<div class="close rmfilter" id="'+sid+'"></div></li>');
+			}else{
+				$('.filter-tokens').append('<ul><li class="finish-token">'+sval+'<div class="close rmfilter" id="'+sid+'"></div></li></ul>');
+			}
+			$.ajax({
+				type: "post",
+				url: site_url+'views/ajax?_wrapper_format=drupal_ajax',
+				data: "field_product_category_target_id="+rid+"&field_features_target_id="+sid+"&view_name=product_display_for_listing_page&view_display_id=block_1&view_args="+paint_type+"&_drupal_ajax=1&ajax_page_state[theme]=nerolac",
+				success: function(result) {
+					for (var i = 0; i <result.length; i++) {
+						if(result[i].command == 'insert' && result[i].method == 'replaceWith'){
+							if(result[i].data.indexOf("product-card") != -1){
+								$(".prod_listing_container").html(result[i].data);
+							}else{
+								$(".prod_listing_container").html('No Product Found!');
+							}
+							$("#views-exposed-form-product-display-for-listing-page-block-1").hide();
+						}
+					}
+					if($(".prod_listing_container").length){
+						$(".views-infinite-scroll-content-wrapper").addClass("row g-lg-4 row-cols-lg-3 row-cols-1");
+					}
+				}
+			});
+		}
+	});
+	$(".wp_surface_token.waterproofing").html("<li>All</li>")
+	
+	$(document).on("click", ".pro-range-filter-waterproofing ul li", function () {
+            $(".wp_surface_token").empty();
+            var i = $(this).find(".rfilter-container").attr("id"),
+                t = $(this).find(".rfilter-container").html(),v
+                a = $("#prid").val();
+            $(".wp_surface_token").append("<li>" + t + '<div class="close rmfilterwater" id="' + i + '"></div></li>'),
+                $.ajax({
+                    type: "post",
+                    url: site_url + langCode + "views/ajax?_wrapper_format=drupal_ajax",
+                    data: "view_name=waterproofing_surface_product&view_display_id=block_1&view_args=" + a + "/" + i + "&_drupal_ajax=1&ajax_page_state[theme]=nerolac",
+                    success: function (i) {
+                        //console.log(i);
+                        for (var t = 0; t < i.length; t++) "insert" == i[t].command && "replaceWith" == i[t].method && $(".prod_listing_container").html(i[t].data);
+                        $(".prod_listing_container").length && $(".views-infinite-scroll-content-wrapper").addClass("row g-lg-4 row-cols-lg-3 row-cols-1");
+                    },
+                });
+        });
+	
+	
+	$(document).on('click', '.pro-data-filter ul li', function() {
+		var rid = $('.pro-range-filter ul li').find(".active").attr("id");
+		if(rid === undefined){
+			rid = 'All';
+		}
+		var sid = $('.pro-finish-filter ul li').find(".active").attr("id");
+		if(sid === undefined){
+			sid = 'All';
+		}
+		var idsArr = []; //create array for ajax
+		var featuresArr = []; // create array to append on filters tab
+
+		jQuery(".pro-data-filter li").each(function(){
+			if (jQuery(this).hasClass("active")){
+				var did = jQuery(this).find(".ptfilter-container").attr("id");
+				var dval = jQuery(this).find('.ptfilter-container').text();
+				idsArr.push(did);
+				 
+				let feautresobj = {'id':did,'value': dval}; // to append on filters tab to avoid duplication
+
+				featuresArr.push(feautresobj);
+			}
+		});
+		if($('.filter-tokens li').length > 0){
+			$('.feature-token').remove();
+			for (var i = 0; i < featuresArr.length; i++){ 
+				$('.filter-tokens ul').append('<li class="feature-token">'+featuresArr[i].value+'<div class="close rmfilter" id="'+featuresArr[i].id+'"></div></li>');
+			}
+		}else{
+			$('ul .feature-token').remove();
+			for (var i = 0; i < featuresArr.length; i++){
+				$('.filter-tokens').append('<ul><li class="feature-token">'+featuresArr[i].value+'<div class="close rmfilter" id="'+featuresArr[i].id+'"></div></li></ul>');
+			}
+		}
+		var paint_type = $("#prid").val();
+		paint_type = paint_type.split(' ').join('+');
+		$.ajax({
+			type: "post",
+			url: site_url+'views/ajax?_wrapper_format=drupal_ajax',
+			data: "field_product_category_target_id="+rid+"&field_features_target_id="+sid+"&view_name=product_display_for_listing_page&field_technical_data_name_target_id="+idsArr+"&view_display_id=block_1&view_args="+paint_type+"&_drupal_ajax=1&ajax_page_state[theme]=nerolac",
+			success: function(result) {
+				for (var i = 0; i <result.length; i++) {
+					if(result[i].command == 'insert' && result[i].method == 'replaceWith'){
+						if(result[i].data.indexOf("product-card") != -1){
+							$(".prod_listing_container").html(result[i].data);
+						}else{
+							$(".prod_listing_container").html('No Product Found!');
+						}
+						$("#views-exposed-form-product-display-for-listing-page-block-1").hide();
+					}
+				}
+				if($(".prod_listing_container").length){
+					$(".views-infinite-scroll-content-wrapper").addClass("row g-lg-4 row-cols-lg-3 row-cols-1");
+				}
+			}
+		});
+	});
+	
+	$(document).on('click', '.rmfilter', function() {
+		var sid = $(this).attr("id");
+		$(this).parent().remove();
+		$("#"+sid).parent().parent().parent().removeClass("active");
+		var rid = $('.pro-range-filter ul li').find(".active").attr("id");
+		if(rid === undefined){
+			rid = 'All';
+		}
+		var sid = $('.pro-finish-filter ul li').find(".active").attr("id");
+		if(sid === undefined){
+			sid = '';
+		}
+		var idsArr = []; //create arry
+
+		jQuery(".pro-data-filter li").each(function(){
+			if (jQuery(this).hasClass("active")){
+				var did = jQuery(this).find(".ptfilter-container").attr("id");
+				var dval = jQuery(this).find('.ptfilter-container').text();
+				if($('.filter-tokens li').length > 0){
+					$('.filter-tokens ul').append('<li>'+dval+'<div class="close rmfilter" id="'+did+'"></div></li>');
+				}else{
+					$('.filter-tokens').append('<ul><li>'+dval+'<div class="close rmfilter" id="'+did+'"></div></li></ul>');
+				}
+				idsArr.push(did);
+			}else{
+				idsArr = '';
+			}
+		});
+		var paint_type = $("#prid").val();
+		
+		$.ajax({
+			type: "post",
+			url: site_url+'views/ajax?_wrapper_format=drupal_ajax',
+			data: "field_product_category_target_id="+rid+"&field_features_target_id="+sid+"&view_name=product_display_for_listing_page&field_technical_data_name_target_id="+idsArr+"&view_display_id=block_1&view_args="+paint_type+"&_drupal_ajax=1&ajax_page_state[theme]=nerolac",
+			success: function(result) {
+				for (var i = 0; i <result.length; i++) {
+					if(result[i].command == 'insert' && result[i].method == 'replaceWith'){
+						$(".prod_listing_container").html(result[i].data);
+						$("#views-exposed-form-product-display-for-listing-page-block-1").hide();
+					}
+				}
+				if($(".prod_listing_container").length){
+					$(".views-infinite-scroll-content-wrapper").addClass("row g-lg-4 row-cols-lg-3 row-cols-1");
+				}
+			}
+		});
+	});
+	
+	$(document).on('click', '.reset', function() {
+		$('.filter-tokens').empty();
+		$(".pro-range-filter ul li").removeClass("active");
+		$(".pro-finish-filter ul li").removeClass("active");
+		$(".pro-data-filter ul li").removeClass("active");
+		var rid = 'All';
+		var sid = '';
+		var paint_type = $("#prid").val();
+		
+		$.ajax({
+			type: "post",
+			url: site_url+'views/ajax?_wrapper_format=drupal_ajax',
+			data: "field_product_category_target_id="+rid+"&field_features_target_id=&view_name=product_display_for_listing_page&field_technical_data_name_target_id=&view_display_id=block_1&view_args="+paint_type+"&_drupal_ajax=1&ajax_page_state[theme]=nerolac",
+			success: function(result) {
+				for (var i = 0; i <result.length; i++) {
+					if(result[i].command == 'insert' && result[i].method == 'replaceWith'){
+						$(".prod_listing_container").html(result[i].data);
+						$("#views-exposed-form-product-display-for-listing-page-block-1").hide();
+					}
+				}
+				if($(".prod_listing_container").length){
+					$(".views-infinite-scroll-content-wrapper").addClass("row g-lg-4 row-cols-lg-3 row-cols-1");
+				}
+			}
+		});
+	});
+	
+	$(document).on('click', '.surface_filter ul li', function() {
+		$('.wp_surface_token').empty();
+		var sid = $(this).find('.rfilter-container').attr("id");
+		var sval = $(this).find('.rfilter-container').html();
+		var surface_type = $("#prid").val();
+		var args = surface_type+"/"+sid;
+		$('.wp_surface_token').append('<li>'+sval+'<div class="close rmfilter" id="'+sid+'"></div></li>');
+		$.ajax({
+			type: "post",
+			url: site_url+'views/ajax?_wrapper_format=drupal_ajax',
+			data: "view_name=waterproofing_surface_product&view_display_id=block_1&view_args="+args+"&_drupal_ajax=1&ajax_page_state[theme]=nerolac",
+			success: function(result) {
+				console.log(result);
+				for (var i = 0; i <result.length; i++) {
+					if(result[i].command == 'insert' && result[i].method == 'replaceWith'){
+						$(".prod_listing_container").html(result[i].data);
+					}
+				}
+				if($(".prod_listing_container").length){
+					$(".views-infinite-scroll-content-wrapper").addClass("row g-lg-4 row-cols-lg-3 row-cols-1");
+				}
+			}
+		});
+	});
+	
+	//add colour tab active class
+	var id = $(".nodeid").attr("id"); 
+	if(id !== undefined) 
+	{ 
+		$(".color-pallatte-tabs li").removeClass("active"); 
+		$("#nodecls-"+id).addClass("active");
+	}
+	if($(".prod_listing_container").length){
+		$(".prod_listing_container").removeClass("row g-lg-4 row-cols-lg-3 row-cols-1");
+		$(".views-infinite-scroll-content-wrapper").addClass("row g-lg-4 row-cols-lg-3 row-cols-1");
+	}
+	
+});
+ // On Select download PDF reports
+ function funDownloadPdf(optionval) { 
+	if (optionval && "" != optionval) { 
+		var t = document.createElement("a"),
+		 o = site_url +  optionval; t.setAttribute("href", o), 
+		//  o = site_url + "sites/default/files/uploads/" + optionval; t.setAttribute("href", o), 
+		 t.setAttribute("target", "_blank"), -1 != navigator.userAgent.indexOf("Firefox") || -1 != navigator.userAgent.indexOf("OPR") ? window.open(o, "_blank") : t.click() 
+	} 
+} 
+
+//  to set autocomplete dropdown width 
+// jQuery.ui.autocomplete.prototype._resizeMenu = function () {
+// 	var ul = this.menu.element;
+// 	ul.outerWidth(this.element.outerWidth());
+//   }
+var autocompleteproto = jQuery.ui.autocomplete.prototype;
+
+jQuery.extend(autocompleteproto, {
+	_resizeMenu: function () {
+		var ul = this.menu.element;
+		ul.outerWidth(this.element.outerWidth());
+		}
+	});
+
+  // autocomplete dropdown dynamic for specific node
+jQuery("#webform-submission-painting-services-node-11553-add-form #edit-city").autocomplete({ 
+	source: site_origin + "/pservices/searchcity",minLength: 2,change: function( event, ui ) {
+		if (ui.item == null) {jQuery(this).val("");return false;}
+	}
+});
+
+jQuery("#webform-submission-our-painting-expert-node-11514-add-form #edit-city").autocomplete({ 
+	source: site_origin + "/pservices/searchcity",minLength: 2,change: function( event, ui ) {
+		if (ui.item == null) {jQuery(this).val("");return false;}
+	}
+});
+  // autocomplete dropdown Manual for specific node
+jQuery( function() {
+	var availableTags = ["Mumbai",
+						 "Mumbai Suburban"
+						];
+	jQuery("#webform-submission-painting-advaisor-program-node-11555-add-form #edit-city").autocomplete({ 
+		source: availableTags,change: function( event, ui ) {
+			if (ui.item == null) {jQuery(this).val("");return false;}
+		}
+	});
+});
+
+function openAppstoreforDevices()
+{
+	var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+    // Windows Phone must come first because its UA also contains "Android"
+    // if (/windows phone/i.test(userAgent)) {
+    //     return "Windows Phone";
+    // }
+
+    if (/android/i.test(userAgent)) {
+        return window.open(
+			'https://play.google.com/store/apps/details?id=com.nerolac.colourmyspace&hl=en_IN&gl=US',
+			'_blank'
+		  );
+    }
+
+    // iOS detection from: http://stackoverflow.com/a/9039885/177710
+    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        return window.open(
+			'https://apps.apple.com/us/app/nerolac-colour-my-space/id1466770351',
+			'_blank'
+		  );
+    }
+
+    return;
+}
+/*
+// Initialize and add the map
+function initMap() {
+  // The location of Uluru
+  const uluru = { lat: -25.344, lng: 131.031 };
+  // The map, centered at Uluru
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 4,
+    center: uluru,
+  });
+  // The marker, positioned at Uluru
+  const marker = new google.maps.Marker({
+    position: uluru,
+    map: map,
+  });
+}
+
+window.initMap = initMap;
+*/
+
+/*Drupal.behaviors.form_submit_processor = {
+  attach: function (context, settings) {
+    jQuery("#webform-submission-our-painting-expert-node-11514-add-form").submit(function(e) {
+      alert('form submitted');
+    });
+  }
+}
+
+
+Drupal.behaviors.events = {
+  attach: function(context, settings) {
+    jQuery('#nerolacsubmit').bind('ajaxSuccess', function(data, status, xhr) {
+      alert(1);
+    });
+  }
+};*/
+
+(function($) {
+  $.fn.callInit = function(data) {
+    if(data.trim()!=''){
+		window.dataLayer = window.dataLayer || [];
+			window.dataLayer.push({
+				'event' : 'form_submission'
+			});
+	}
+  };
+})(jQuery);
+
+var href = document.location.href;
+var lastPathSegment = href.substr(href.lastIndexOf('/') + 1);
+if(lastPathSegment == 'sitemap.html'){
+	document.querySelector('.select-wrapper').addEventListener('click', function() {
+		this.querySelector('.select').classList.toggle('open');
+	})
+	jQuery(".custom-option").on("click", function() {window.location.href = jQuery(this).attr("data-value")});
+}
+jQuery(".repo_download").change(function(){
+	var val = jQuery(this).val();
+	if(val != ''){
+		window.open(val);
+	}
+});
+
+jQuery('.impression-inspired-imgs-container .impression-inspired-imgs').on('click', function () {
+    var index = jQuery(this).attr('data-slide');
+    jQuery('.carousel ').flickity('select', index);
+    jQuery('.impression-inspired-imgs-container .impression-inspired-imgs').removeClass('active');
+    jQuery(this).addClass('active');
+    jQuery('.impression-page-third-section .side-imgs-bg').removeClass('active');
+    jQuery('.impression-page-third-section .side-imgs-bg:eq(' + index + ')').addClass('active');
+});
+
+jQuery('.carousel').flickity({
+    on: {
+        ready: function () {
+            // console.log('Flickity is ready');
+        },
+        change: function (index) {
+            console.log('Slide changed to' + index);
+            jQuery('.impression-inspired-imgs-container .impression-inspired-imgs:eq(' + index + ')').click();
+        }
+    }
+});
+jQuery(document).on('load', function() {
+            jQuery('#edit-i-agree-to-the-terms-of-service-and-privacy-policy-yes-i-would-l').prop('checked', true);
+        });
+
+function loadIframeAfterDelay() {
+	setTimeout(function() {
+		// Create the iframe element
+		var iframe = document.createElement('iframe');
+
+		// Set the iframe properties
+		/*iframe.src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3772.4924305017253!2d72.820216214476!3d18.998010787132714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7cef39cb3ee59%3A0xba0bd81d00f55366!2sKansai%20Nerolac%20Paints%20Limited!5e0!3m2!1sen!2sin!4v1663563171834!5m2!1sen!2sin";*/
+		
+		iframe.src = "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d241445.8690570929!2d72.52567549453126!3d18.993631000000008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7cfb9c1b082fd%3A0x7d21e5e6a01515bc!2sKansai%20Nerolac%20Paints%20Limited!5e0!3m2!1sen!2sin!4v1727939997024!5m2!1sen!2sin";
+		iframe.width = '100%';
+		iframe.height = '100%';
+		iframe.style.border = '0';
+		iframe.allowFullscreen = true;
+		iframe.loading = 'lazy';
+		iframe.referrerpolicy = 'no-referrer-when-downgrade';
+
+		// Add the iframe to the container div
+		if(document.getElementById('iframemapContainer')){
+			var iframeContainer = document.getElementById('iframemapContainer');
+			iframeContainer.appendChild(iframe);
+		}
+	}, 1000); // Delay of 1 second (1000 milliseconds)
+}
+
+// Call the function to load the iframe after the specified delay
+loadIframeAfterDelay();

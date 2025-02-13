@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Unway Build</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Active
+  * Updated: Aug 07 2024 with Bootstrap v5.3.3
+  * Author: Jeet Dutta.com
+  ======================================================== -->
+  <style>
+    /* Adding the custom font */
+    @font-face {
+      font-family: 'MyCustomFont';
+      src: url('posterama-semibold.otf') format('opentype');
+    }
+  </style>
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+      
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1 style="color: white; font-family: 'MyCustomFont';">Unway Build.</h1>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="index.html" class="active">HOME</a></li>
+          <li><a href="about.html">ABOUT</a></li>
+          <li><a href="services.html">SERVICES</a></li>
+          <li><a href="portfolio.html">PORTFOLIO</a></li>
+          <!--
+          <li><a href="team.html">Team</a></li>
+          -->
+          <!--
+          <li><a href="blog.html">Blog</a></li>
+          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <ul>
+              <li><a href="#">Dropdown 1</a></li>
+              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                <ul>
+                  <li><a href="#">Deep Dropdown 1</a></li>
+                  <li><a href="#">Deep Dropdown 2</a></li>
+                  <li><a href="#">Deep Dropdown 3</a></li>
+                  <li><a href="#">Deep Dropdown 4</a></li>
+                  <li><a href="#">Deep Dropdown 5</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Dropdown 2</a></li>
+              <li><a href="#">Dropdown 3</a></li>
+              <li><a href="#">Dropdown 4</a></li>
+            </ul>
+          </li>
+        -->
+          <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- About Section -->
+    <section id="about" class="about section">
+
+      <div class="container">
+        <div class="row align-items-center justify-content-between">
+          <div class="col-lg-7 mb-5 mb-lg-0 order-lg-2" data-aos="fade-up" data-aos-delay="400">
+            <div class="swiper init-swiper">
+              <script type="application/json" class="swiper-config">
+                {
+                  "loop": true,
+                  "speed": 600,
+                  "autoplay": {
+                    "delay": 5000
+                  },
+                  "slidesPerView": "auto",
+                  "pagination": {
+                    "el": ".swiper-pagination",
+                    "type": "bullets",
+                    "clickable": true
+                  },
+                  "breakpoints": {
+                    "320": {
+                      "slidesPerView": 1,
+                      "spaceBetween": 40
+                    },
+                    "1200": {
+                      "slidesPerView": 1,
+                      "spaceBetween": 1
+                    }
+                  }
+                }
+              </script>
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="assets/home img/img3.jpg" alt="Image" class="img-fluid" >
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/home img/img2.jpg" alt="Image" class="img-fluid" >
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/home img/img1.jpg" alt="Image" class="img-fluid">
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+          <div class="col-lg-4 order-lg-1">
+            <span class="section-subtitle" data-aos="fade-up">Welcome</span>
+            <h1 class="mb-4" data-aos="fade-up">
+              Architecture and Interior Designing.
+            </h1>
+            <p data-aos="fade-up">
+              Your spaces should be a reflection of your soul, where every corner speaks your style, and every detail tells your story.
+            </p>
+            <p data-aos="fade-up">
+              Let us transform your spaces into living expressions of your personality, where comfort meets creativity, and functionality embraces beauty.
+            </p>
+            <p data-aos="fade-up">
+              Reach out to us, and let’s craft a world that feels truly yours.
+            </p>
+            <p class="mt-5" data-aos="fade-up">
+              <a href="#" class="btn btn-get-started">Get Started</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section><!-- /About Section -->
+
+    <!-- Services Buttons -->
+
+    <section id="about-2" class="about-2 section light-background" style="font-family: Arial, sans-serif; margin: 0; padding: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; background-color: #f9f9f9;">
+      <div style="text-align: center; padding: 20px; max-width: 1200px; width: 100%; background-color: #ffffff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); border-radius: 8px;">
+          <h2 style="margin-bottom: 10px; font-size: 24px; color: #333;">Everything You Need at One Place</h2>
+          <h3 style="margin-bottom: 30px; font-size: 18px; color: #777;">In-House Services</h3>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; padding: 0 10px;">
+              <!-- Buttons -->
+              <button class="service-button" onclick="showMessage('Loans')">
+                  <img src="./assets/img/icons/loan.png" style="width: 50px; height: 50px;" alt="Loans">
+                  <p>Loans</p>
+              </button>
+              <button class="service-button" onclick="showMessage('Vastu Consultation')">
+                  <img src="./assets/img/icons/vastu.png" style="width: 50px; height: 50px;" alt="Vastu Consultation">
+                  <p>Vastu Consultation</p>
+              </button>
+              <button class="service-button" onclick="showMessage('Architecture Planning and Drawing')">
+                  <img src="./assets/img/icons/planning.png" style="width: 50px; height: 50px;" alt="Planning and Drawing">
+                  <p>Architecture Planning</p>
+              </button>
+              <button class="service-button" onclick="showMessage('Construction')">
+                  <img src="./assets/img/icons/Turn key .png" style="width: 50px; height: 50px;" alt="Construction">
+                  <p>Turn-key Construction</p>
+              </button>
+              <button class="service-button" onclick="showMessage('Construction Material')">
+                  <img src="./assets/img/icons/Construction material .png" style="width: 50px; height: 50px;" alt="Construction Material">
+                  <p>Construction Material Marketplace</p>
+              </button>
+              <button class="service-button" onclick="showMessage('Interior Designing')">
+                  <img src="./assets/img/icons/interior.png" style="width: 50px; height: 50px;" alt="Interior Designing">
+                  <p>Interior Designing</p>
+              </button>
+              <button class="service-button" onclick="showMessage('Interior Products')">
+                  <img src="./assets/img/icons/interior furniture.png" style="width: 50px; height: 50px;" alt="Interior Products">
+                  <p>Interior Products</p>
+              </button>
+              <button class="service-button" onclick="showMessage('Wood Factory')">
+                  <img src="./assets/img/icons/woodFactory.png" style="width: 50px; height: 50px;" alt="Wood Factory">
+                  <p>Wood Factory</p>
+              </button>
+              <button class="service-button" onclick="window.location.href='aluminium&upvc.html'">
+                  <img src="./assets/img/icons/door.png" style="width: 50px; height: 50px;" alt="Doors & Windows">
+                  <p>Aluminium & UPVC</p>
+              </button>
+              <button class="service-button" onclick="showMessage('Paint My Place')">
+                  <img src="./assets/img/icons/painr.png" style="width: 50px; height: 50px;" alt="Paint My Place">
+                  <p>Paint My Place</p>
+              </button>
+              <button class="service-button" onclick="showMessage('Luxury Bathrooms')">
+                  <img src="./assets/img/icons/Luxury bathroom .png" style="width: 50px; height: 50px;" alt="Luxury Bathrooms">
+                  <p>Luxury Bathrooms</p>
+              </button>
+              <button class="service-button" onclick="showMessage('Luxury Bathrooms')">
+                <img src="./assets/img/icons/Flooring .png" style="width: 50px; height: 50px;" alt="Luxury Bathrooms">
+                <p>Flooring</p>
+              </button>
+              <button class="service-button" onclick="showMessage('Luxury Bathrooms')">
+                <img src="./assets/img/icons/home-automation-32.png" style="width: 50px; height: 50px;" alt="Luxury Bathrooms">
+                <p>Home Automation</p>
+              </button>
+              <button class="service-button" onclick="showMessage('Luxury Bathrooms')">
+                <img src="./assets/img/icons/home_decorator.png" style="width: 50px; height: 50px;" alt="Luxury Bathrooms">
+                <p>Home Decorator</p>
+              </button>
+              <button class="service-button" onclick="showMessage('Solar Panel')">
+                  <img src="./assets/img/icons/solar-panels-32.png" style="width: 50px; height: 50px;" alt="Solar Panel">
+                  <p>Solar Panel</p>
+              </button>
+              <button class="service-button" onclick="showMessage('Luxury Bathrooms')">
+                <img src="./assets/img/icons/Terrirce.png" style="width: 50px; height: 50px;" alt="Luxury Bathrooms">
+                <p>Terrace & Outdoors</p>
+              </button>
+              <button class="service-button" onclick="showMessage('Lightings')">
+                  <img src="./assets/img/icons/lighting-50.png" style="width: 50px; height: 50px;" alt="Lightings">
+                  <p>Lightings</p>
+              </button>
+              <button class="service-button" onclick="showMessage('Swimming Pools')">
+                  <img src="./assets/img/icons/swimming-pool.png" style="width: 50px; height: 50px;" alt="Swimming Pools">
+                  <p>Swimming Pools</p>
+              </button>
+              <button class="service-button" onclick="showMessage('Commercial Kitchen')">
+                  <img src="./assets/img/icons/kitchen-room-32.png" style="width: 50px; height: 50px;" alt="Commercial Kitchen">
+                  <p>Commercial Kitchen</p>
+              </button>
+              <button class="service-button" onclick="showMessage('Office Interior')">
+                  <img src="./assets/img/icons/office-50.png" style="width: 50px; height: 50px;" alt="Office Interior">
+                  <p>Office Interior</p>
+              </button>
+              <button class="service-button" onclick="showMessage('Elevator')">
+                  <img src="./assets/img/icons/elevator-50.png" style="width: 50px; height: 50px;" alt="Elevator">
+                  <p>Elevator</p>
+              </button>
+              <button class="service-button" onclick="showMessage('Scaffolding')">
+                  <img src="./assets/img/icons/scaffolding-50.png" style="width: 50px; height: 50px;" alt="Scaffolding">
+                  <p>Scaffolding</p>
+              </button>
+              <button class="service-button" onclick="showMessage('Luxury Bathrooms')">
+                <img src="./assets/img/icons/legal_services.png" style="width: 50px; height: 50px;" alt="Luxury Bathrooms">
+                <p>Property Legal Services</p>
+              </button>
+          </div>
+      </div>
+  </section>
+  
+  <script>
+      function showMessage(serviceName) {
+          alert(`You clicked on: ${serviceName}`);
+      }
+  </script>
+  
+  <style>
+      .service-button {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          width: 150px;
+          height: 150px;
+          background-color: #f5f5f5;
+          border: 2px solid #ddd;
+          border-radius: 10px;
+          text-align: center;
+          cursor: pointer;
+          transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+      }
+  
+      .service-button img {
+          margin-bottom: 10px;
+      }
+  
+      .service-button p {
+          font-size: 20px;
+          font-weight: bolder;
+          color: #333;
+      }
+  
+      .service-button:hover {
+          background-color: #e3f2fd;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+          transform: translateY(-5px);
+      }
+  </style>
+  
+  
+  <!-- Add this script at the end -->
+  <script>
+      // Ripple effect
+      document.querySelectorAll('.service-button').forEach(button => {
+          button.addEventListener('click', function (e) {
+              const ripple = document.createElement('span');
+              ripple.classList.add('ripple');
+              const rect = this.getBoundingClientRect();
+              ripple.style.left = `${e.clientX - rect.left}px`;
+              ripple.style.top = `${e.clientY - rect.top}px`;
+              this.appendChild(ripple);
+  
+              setTimeout(() => ripple.remove(), 600); // Remove ripple after animation
+          });
+      });
+  
+      // Add hover and active effects via JavaScript
+      document.querySelectorAll('.service-button').forEach(button => {
+          button.addEventListener('mouseover', () => {
+              button.style.transform = 'translateY(-5px)';
+              button.style.boxShadow = '0 6px 12px rgba(0, 0, 0, 0.15)';
+          });
+          button.addEventListener('mouseout', () => {
+              button.style.transform = 'translateY(0)';
+              button.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
+          });
+      });
+  </script>
+  
+  <!-- Add CSS in a <style> tag or a separate file -->
+  <style>
+      .service-button {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+          padding: 15px;
+          border: 1px solid #ddd;
+          border-radius: 8px;
+          background-color: #f8f8f8;
+          cursor: pointer;
+          position: relative;
+          overflow: hidden;
+          transition: transform 0.3s, box-shadow 0.3s;
+      }
+  
+      .service-button img {
+          width: 50px;
+          height: 50px;
+          margin-bottom: 10px;
+      }
+  
+      .service-button p {
+          font-size: 14px;
+          color: #555;
+          margin: 0;
+      }
+  
+      .ripple {
+          position: absolute;
+          width: 100px;
+          height: 100px;
+          background: rgba(0, 0, 0, 0.1);
+          border-radius: 50%;
+          transform: scale(0);
+          animation: ripple-animation 0.6s linear;
+      }
+  
+      @keyframes ripple-animation {
+          to {
+              transform: scale(4);
+              opacity: 0;
+          }
+      }
+  </style>
+  
+  <!--Popular Search-->
+
+  <div style="max-width: 85%; overflow: hidden; margin: 20px auto; background-color: #ffffff; padding: 20px 30px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); position: relative;">
+    <h2 style="font-size: 24px; margin-bottom: 20px; color: #333;">Popular Searches</h2>
+    <div id="carousel" style="display: flex; gap: 20px; transition: transform 0.5s ease;">
+        <!-- Card 1 -->
+        <div style="min-width: 350px; min-height: 200px; background: #f9f9f9; border-radius: 10px; overflow: hidden; text-align: center; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+            <img src=assets/popular/bari.jpg alt="Estate Agents For Residence" style="width: 100%; height: 150px; object-fit: cover; transition: transform 0.3s ease;">
+            <h3 style="margin: 10px 0; font-size: 16px; color: #333;">Estate Agents For Residence</h3>
+            <button style="background: #007bff; color: #fff; border: none; padding: 10px 15px; margin-bottom: 10px; cursor: pointer; border-radius: 5px; font-size: 14px;">Enquire Now</button>
+        </div>
+        <!-- Card 1 -->
+        <div style="min-width: 350px; min-height: 200px; background: #f9f9f9; border-radius: 10px; overflow: hidden; text-align: center; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+          <img src="https://via.placeholder.com/300x150" alt="Estate Agents For Residence" style="width: 100%; height: 150px; object-fit: cover; transition: transform 0.3s ease;">
+          <h3 style="margin: 10px 0; font-size: 16px; color: #333;">Estate Agents For Residence</h3>
+          <button style="background: #007bff; color: #fff; border: none; padding: 10px 15px; margin-bottom: 10px; cursor: pointer; border-radius: 5px; font-size: 14px;">Enquire Now</button>
+        </div>
+        <!-- Card 1 -->
+        <div style="min-width: 350px; min-height: 200px; background: #f9f9f9; border-radius: 10px; overflow: hidden; text-align: center; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+          <img src="https://via.placeholder.com/300x150" alt="Estate Agents For Residence" style="width: 100%; height: 150px; object-fit: cover; transition: transform 0.3s ease;">
+          <h3 style="margin: 10px 0; font-size: 16px; color: #333;">Estate Agents For Residence</h3>
+          <button style="background: #007bff; color: #fff; border: none; padding: 10px 15px; margin-bottom: 10px; cursor: pointer; border-radius: 5px; font-size: 14px;">Enquire Now</button>
+        </div>
+        <!-- Card 1 -->
+        <div style="min-width: 350px; min-height: 200px; background: #f9f9f9; border-radius: 10px; overflow: hidden; text-align: center; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+          <img src="https://via.placeholder.com/300x150" alt="Estate Agents For Residence" style="width: 100%; height: 150px; object-fit: cover; transition: transform 0.3s ease;">
+          <h3 style="margin: 10px 0; font-size: 16px; color: #333;">Estate Agents For Residence</h3>
+          <button style="background: #007bff; color: #fff; border: none; padding: 10px 15px; margin-bottom: 10px; cursor: pointer; border-radius: 5px; font-size: 14px;">Enquire Now</button>
+        </div>
+        <!-- Card 1 -->
+        <div style="min-width: 350px; min-height: 200px; background: #f9f9f9; border-radius: 10px; overflow: hidden; text-align: center; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+          <img src="https://via.placeholder.com/300x150" alt="Estate Agents For Residence" style="width: 100%; height: 150px; object-fit: cover; transition: transform 0.3s ease;">
+          <h3 style="margin: 10px 0; font-size: 16px; color: #333;">Estate Agents For Residence</h3>
+          <button style="background: #007bff; color: #fff; border: none; padding: 10px 15px; margin-bottom: 10px; cursor: pointer; border-radius: 5px; font-size: 14px;">Enquire Now</button>
+        </div>
+        <!-- Card 1 -->
+        <div style="min-width: 350px; min-height: 200px; background: #f9f9f9; border-radius: 10px; overflow: hidden; text-align: center; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+          <img src="https://via.placeholder.com/300x150" alt="Estate Agents For Residence" style="width: 100%; height: 150px; object-fit: cover; transition: transform 0.3s ease;">
+          <h3 style="margin: 10px 0; font-size: 16px; color: #333;">Estate Agents For Residence</h3>
+          <button style="background: #007bff; color: #fff; border: none; padding: 10px 15px; margin-bottom: 10px; cursor: pointer; border-radius: 5px; font-size: 14px;">Enquire Now</button>
+        </div>
+        <!-- Card 1 -->
+        <div style="min-width: 350px; min-height: 200px; background: #f9f9f9; border-radius: 10px; overflow: hidden; text-align: center; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+          <img src="https://via.placeholder.com/300x150" alt="Estate Agents For Residence" style="width: 100%; height: 150px; object-fit: cover; transition: transform 0.3s ease;">
+          <h3 style="margin: 10px 0; font-size: 16px; color: #333;">Estate Agents For Residence</h3>
+          <button style="background: #007bff; color: #fff; border: none; padding: 10px 15px; margin-bottom: 10px; cursor: pointer; border-radius: 5px; font-size: 14px;">Enquire Now</button>
+        </div>
+        <!-- Card 2 -->
+        <div style="min-width: 350px; min-height: 200px; background: #f9f9f9; border-radius: 10px; overflow: hidden; text-align: center; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+            <img src="https://via.placeholder.com/300x150" alt="Real Estate Agents" style="width: 100%; height: 150px; object-fit: cover; transition: transform 0.3s ease;">
+            <h3 style="margin: 10px 0; font-size: 16px; color: #333;">Real Estate Agents</h3>
+            <button style="background: #007bff; color: #fff; border: none; padding: 10px 15px; margin-bottom: 10px; cursor: pointer; border-radius: 5px; font-size: 14px;">Enquire Now</button>
+        </div>
+        <!-- Card 3 -->
+        <div style="min-width: 350px; min-height: 200px; background: #f9f9f9; border-radius: 10px; overflow: hidden; text-align: center; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+            <img src="https://via.placeholder.com/300x150" alt="Banquet Halls" style="width: 100%; height: 150px; object-fit: cover; transition: transform 0.3s ease;">
+            <h3 style="margin: 10px 0; font-size: 16px; color: #333;">Banquet Halls</h3>
+            <button style="background: #007bff; color: #fff; border: none; padding: 10px 15px; margin-bottom: 10px; cursor: pointer; border-radius: 5px; font-size: 14px;">Enquire Now</button>
+        </div>
+        <!-- Card 4 -->
+        <div style="min-width: 350px; min-height: 200px; background: #f9f9f9; border-radius: 10px; overflow: hidden; text-align: center; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+            <img src="https://via.placeholder.com/300x150" alt="Interior Designers" style="width: 100%; height: 150px; object-fit: cover; transition: transform 0.3s ease;">
+            <h3 style="margin: 10px 0; font-size: 16px; color: #333;">Interior Designers</h3>
+            <button style="background: #007bff; color: #fff; border: none; padding: 10px 15px; margin-bottom: 10px; cursor: pointer; border-radius: 5px; font-size: 14px;">Enquire Now</button>
+        </div>
+        <!-- Card 5 -->
+        <div style="min-width: 350px; min-height: 200px; background: #f9f9f9; border-radius: 10px; overflow: hidden; text-align: center; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+            <img src="https://via.placeholder.com/300x150" alt="Caterers" style="width: 100%; height: 150px; object-fit: cover; transition: transform 0.3s ease;">
+            <h3 style="margin: 10px 0; font-size: 16px; color: #333;">Caterers</h3>
+            <button style="background: #007bff; color: #fff; border: none; padding: 10px 15px; margin-bottom: 10px; cursor: pointer; border-radius: 5px; font-size: 14px;">Enquire Now</button>
+        </div>
+    </div>
+    <!-- Navigation Arrows -->
+    <button onclick="slide(-1)" style="position: absolute; top: 50%; left: 0; transform: translateY(-50%); background: #007bff; color: #fff; border: none; border-radius: 50%; width: 40px; height: 40px; cursor: pointer; font-size: 18px;">&#10094;</button>
+    <button onclick="slide(1)" style="position: absolute; top: 50%; right: 0; transform: translateY(-50%); background: #007bff; color: #fff; border: none; border-radius: 50%; width: 40px; height: 40px; cursor: pointer; font-size: 18px;">&#10095;</button>
+
+    <script>
+        let currentSlide = 0;
+        const carousel = document.getElementById('carousel');
+        const cardWidth = 220; // Card width + gap
+
+        function slide(direction) {
+            const totalCards = carousel.children.length;
+            const visibleCards = Math.floor(carousel.parentElement.offsetWidth / cardWidth);
+            const maxSlides = totalCards - visibleCards;
+
+            currentSlide = Math.max(0, Math.min(currentSlide + direction, maxSlides));
+            const offset = -(currentSlide * cardWidth);
+            carousel.style.transform = `translateX(${offset}px)`;
+        }
+
+        // Add hover effect to images
+        const images = document.querySelectorAll('#carousel img');
+        images.forEach((img) => {
+            img.addEventListener('mouseover', () => {
+                img.style.transform = 'scale(1.1)';
+            });
+            img.addEventListener('mouseout', () => {
+                img.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</div>
+
+
+
+
+  <!--Popular Search End-->
+    
+  
+    <!-- About 2 Section -->
+    <section id="about-2" class="about-2 section light-background">
+
+      <div class="container">
+        <div class="content">
+          <div class="row justify-content-center">
+            <div class="col-sm-12 col-md-5 col-lg-4 col-xl-4 order-lg-2 offset-xl-1 mb-4">
+              <div class="img-wrap text-center text-md-left" data-aos="fade-up" data-aos-delay="100">
+                <div class="img">
+                  <img src="assets/img/slide_1.jpg" alt="circle image" class="img-fluid">
+                </div>
+              </div>
+            </div>
+
+            <div class="offset-md-0 offset-lg-1 col-sm-12 col-md-5 col-lg-5 col-xl-4" data-aos="fade-up">
+              <div class="px-3">
+                <span class="content-subtitle">Our Mission</span>
+                <h2 class="content-title text-start">
+                  Crafting spaces that reflect your story with beauty, purpose, and inspiration.
+                </h2>
+                <p class="lead">
+                  We craft inspiring spaces that reflect individuality, elevate living, and spark joy, where beauty meets 
+                  functionality, comfort embraces innovation, and every detail tells your story.
+                </p>
+                
+                <p class="mb-5">
+                  We transform houses into homes 
+                  and workplaces into hubs of inspiration spaces that are uniquely yours.
+                </p>
+                <p>
+                
+                  <a href="#" class="btn-get-started">Get Started</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /About 2 Section -->
+
+    <!-- Services Section -->
+    <section id="services" class="services section light-background">
+
+      <div class="container">
+        <div class="row gy-4 justify-content-center">
+
+          <div class="col-lg-3">
+            <div class="services-item" data-aos="fade-up">
+              <div class="services-icon">
+                <i class="bi bi-bullseye"></i>
+              </div>
+              <div>
+                <h3>Technology</h3>
+                <p>Separated they live in Bookmarksgrove right at the coast</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3">
+            <div class="services-item" data-aos="fade-up" data-aos-delay="100">
+              <div class="services-icon">
+                <i class="bi bi-command"></i>
+              </div>
+              <div>
+                <h3>Web Design</h3>
+                <p>Separated they live in Bookmarksgrove right at the coast</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-3">
+            <div class="services-item" data-aos="fade-up" data-aos-delay="200">
+              <div class="services-icon">
+                <i class="bi bi-bar-chart"></i>
+              </div>
+              <div>
+                <h3>Branding</h3>
+                <p>Separated they live in Bookmarksgrove right at the coast</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section><!-- /Services Section -->
+
+    <!-- Stats Section -->
+    <section id="stats" class="stats section light-background">
+
+      <div class="container">
+
+        <div class="row gy-4 justify-content-center">
+
+          <div class="col-lg-5">
+            <div class="images-overlap">
+              <img src="assets/img/img_v_1.jpg" alt="student" class="img-fluid img-1" data-aos="fade-up">
+            </div>
+          </div>
+
+          <div class="col-lg-4 ps-lg-5">
+            <span class="content-subtitle">Why Us</span>
+            <h2 class="content-title">We blend creativity, precision, and passion to craft spaces that reflect your unique style.</h2>
+            <p class="lead">
+              Crafting personalized spaces that blend innovation, functionality, and style to perfectly reflect your unique vision.
+              Innovative design, personalized solutions, and seamless execution bringing your vision to life with style and precision.
+            </p>
+            <p class="mb-5">
+              Transforming spaces with creativity and precision to reflect your unique lifestyle.
+              A collaborative approach, transforming ideas into distinctive spaces that combine beauty, efficiency, and lasting impact.
+            </p>
+            <div class="row mb-5 count-numbers">
+
+              <!-- Start Stats Item -->
+              <div class="col-4 counter" data-aos="fade-up" data-aos-delay="100">
+                <span data-purecounter-separator="true" data-purecounter-start="0" data-purecounter-end="39" data-purecounter-duration="1" class="purecounter number"></span>
+                <span class="d-block">Houses</span>
+              </div>
+              <!-- End Stats Item -->
+
+              <!-- Start Stats Item -->
+              <div class="col-4 counter" data-aos="fade-up" data-aos-delay="200">
+                <span data-purecounter-separator="true" data-purecounter-start="0" data-purecounter-end="41" data-purecounter-duration="1" class="purecounter number"></span>
+                <span class="d-block">Offices</span>
+              </div>
+              <!-- End Stats Item -->
+
+              <!-- Start Stats Item -->
+              <div class="col-4 counter" data-aos="fade-up" data-aos-delay="300">
+                <span data-purecounter-separator="true" data-purecounter-start="0" data-purecounter-end="19" data-purecounter-duration="1" class="purecounter number"></span>
+                <span class="d-block">Buildings</span>
+              </div>
+              <!-- End Stats Item -->
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- /Stats Section -->
+
+    <!-- Blog Posts Section -->
+    <section id="blog-posts" class="blog-posts section">
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Recent Projects</h2>
+        <!--<h2>Blog Posts</h2>-->
+      </div><!-- End Section Title -->
+      <div class="container">
+
+        <div class="row gy-4">
+          <div class="col-md-6 col-lg-4">
+            <div class="post-entry" data-aos="fade-up" data-aos-delay="100">
+              <a href="#" class="thumb d-block"><img src="assets/img/img_h_4.jpg" alt="Image" class="img-fluid rounded"></a>
+
+              <div class="post-content">
+                <div class="meta">
+                  <a href="#" class="cat">Development</a> •
+                  <span class="date">July 20, 2020</span>
+                </div>
+                <h3><a href="#">There live the blind texts they live</a></h3>
+                <p>
+                  Far far away, behind the word mountains, far from the countries
+                  Vokalia and Consonantia, there live the blind texts.
+                </p>
+
+                <div class="d-flex author align-items-center">
+                  <div class="pic">
+                    <img src="assets/img/team/team-3.jpg" alt="Image" class="img-fluid rounded-circle">
+                  </div>
+                  <div class="author-name">
+                    <strong class="d-block">Winston Gold</strong>
+                    <span class="">Lead Product Designer</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="post-entry" data-aos="fade-up" data-aos-delay="200">
+              <a href="#" class="thumb d-block"><img src="assets/img/img_h_2.jpg" alt="Image" class="img-fluid rounded"></a>
+
+              <div class="post-content">
+                <div class="meta">
+                  <a href="#" class="cat">Development</a> •
+                  <span class="date">July 20, 2020</span>
+                </div>
+                <h3><a href="#">There live the blind texts they live</a></h3>
+                <p>
+                  Far far away, behind the word mountains, far from the countries
+                  Vokalia and Consonantia, there live the blind texts.
+                </p>
+
+                <div class="d-flex author align-items-center">
+                  <div class="pic">
+                    <img src="assets/img/team/team-2.jpg" alt="Image" class="img-fluid rounded-circle">
+                  </div>
+                  <div class="author-name">
+                    <strong class="d-block">Winston Gold</strong>
+                    <span class="">Lead Product Designer</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-4">
+            <div class="post-entry" data-aos="fade-up" data-aos-delay="300">
+              <a href="#" class="thumb d-block"><img src="assets/img/img_h_3.jpg" alt="Image" class="img-fluid rounded"></a>
+
+              <div class="post-content">
+                <div class="meta">
+                  <a href="#" class="cat">Development</a> •
+                  <span class="date">July 20, 2020</span>
+                </div>
+                <h3><a href="#">There live the blind texts they live</a></h3>
+                <p>
+                  Far far away, behind the word mountains, far from the countries
+                  Vokalia and Consonantia, there live the blind texts.
+                </p>
+
+                <div class="d-flex author align-items-center">
+                  <div class="pic">
+                    <img src="assets/img/team/team-1.jpg" alt="Image" class="img-fluid rounded-circle">
+                  </div>
+                  <div class="author-name">
+                    <strong class="d-block">Winston Gold</strong>
+                    <span class="">Lead Product Designer</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Blog Posts Section -->
+
+    <!-- Tabs Section -->
+    <section id="tabs" class="tabs section light-background">
+
+      <div class="container">
+        <div class="row gap-x-lg-4 justify-content-between">
+          <div class="col-lg-4 js-custom-dots">
+            <a href="#" class="service-item link horizontal d-flex active" data-aos="fade-left" data-aos-delay="0">
+              <div class="service-icon color-1 mb-4">
+                <i class="bi bi-alarm"></i>
+              </div>
+              <!-- /.icon -->
+              <div class="service-contents">
+                <h3>Modern and clean design</h3>
+                <p>
+                  Far far away, behind the word mountains, far from the countries .
+                </p>
+              </div>
+              <!-- /.service-contents-->
+            </a>
+            <!-- /.service -->
+
+            <a href="#" class="service-item link horizontal d-flex" data-aos="fade-left" data-aos-delay="100">
+              <div class="service-icon color-2 mb-4">
+                <i class="bi bi-bag-check"></i>
+              </div>
+              <!-- /.icon -->
+              <div class="service-contents">
+                <h3>Sell Products</h3>
+                <p>
+                  Far far away, behind the word mountains, far from the countries .
+                </p>
+              </div>
+              <!-- /.service-contents-->
+            </a>
+            <!-- /.service -->
+
+            <a href="#" class="service-item link horizontal d-flex" data-aos="fade-left" data-aos-delay="200">
+              <div class="service-icon color-3 mb-4">
+                <i class="bi bi-briefcase"></i>
+              </div>
+              <!-- /.icon -->
+              <div class="service-contents">
+                <h3>Success Every Day</h3>
+                <p>
+                  Far far away, behind the word mountains, far from the countries .
+                </p>
+              </div>
+              <!-- /.service-contents-->
+            </a>
+            <!-- /.service -->
+
+            <a href="#" class="service-item link horizontal d-flex" data-aos="fade-left" data-aos-delay="300">
+              <div class="service-icon color-4 mb-4">
+                <i class="bi bi-easel"></i>
+              </div>
+              <!-- /.icon -->
+              <div class="service-contents">
+                <h3>Bring Ideas to Life</h3>
+                <p>
+                  Far far away, behind the word mountains, far from the countries .
+                </p>
+              </div>
+              <!-- /.service-contents-->
+            </a>
+            <!-- /.service -->
+          </div>
+
+          <div class="col-lg-8">
+            <div class="swiper init-swiper-tabs">
+              <script type="application/json" class="swiper-config">
+                {
+                  "loop": true,
+                  "speed": 600,
+                  "autoHeight": true,
+                  "autoplay": {
+                    "delay": 5000
+                  },
+                  "slidesPerView": "auto",
+                  "pagination": {
+                    "el": ".swiper-pagination",
+                    "type": "bullets",
+                    "clickable": true
+                  },
+                  "breakpoints": {
+                    "320": {
+                      "slidesPerView": 1,
+                      "spaceBetween": 40
+                    },
+                    "1200": {
+                      "slidesPerView": 1,
+                      "spaceBetween": 1
+                    }
+                  }
+                }
+              </script>
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="assets/img/img_h_1.jpg" alt="Image" class="img-fluid">
+                  <div class="p-4">
+                   <!--<h3 class="text-black h5 mb-3">Modern and clean design</h3>
+                    <div class="row">
+                      <div class="col-lg-8">
+                        <p>
+                          Far far away, behind the word mountains, far from the
+                          countries Vokalia and Consonantia, there live the blind
+                          texts. Separated they live in Bookmarksgrove right at the
+                          coast of the Semantics, a large language ocean.
+                        </p>
+                        <p>
+                          A small river named Duden flows by their place and
+                          supplies it with the necessary regelialia. It is a
+                          paradisematic country, in which roasted parts of sentences
+                          fly into your mouth.
+                        </p>
+                      </div>
+                      <div class="col-lg-4">
+                        <ul class="list-unstyled list-check">
+                          <li>Far far away, behind the word</li>
+                          <li>Far from the countries Vokalia</li>
+                          <li>Separated they live in Bookmarksgrove</li>
+                        </ul>
+                      </div>
+                    </div>-->
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/img/img_h_2.jpg" alt="Image" class="img-fluid">
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/img/img_h_3.jpg" alt="Image" class="img-fluid">
+                </div>
+                <div class="swiper-slide">
+                  <img src="assets/img/img_h_4.jpg" alt="Image" class="img-fluid">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Tabs Section -->
+
+    <!-- Services 2 Section -->
+    <section id="services-2" class="services-2 section">
+
+      <div class="container">
+        <div class="row justify-content-center" data-aos="fade-up">
+          <div class="col-md-6 col-lg-4">
+            <span class="content-subtitle">Our Services</span>
+            <h2 class="content-title">
+              Far far away, behind the word mountains, far from the countries
+              Vokalia
+            </h2>
+            <p class="lead">
+              Far far away, behind the word mountains, far from the countries
+              Vokalia and Consonantia, there live the blind texts.
+            </p>
+            <p class="mb-5">
+              Separated they live in Bookmarksgrove right at the coast of the
+              Semantics, a large language ocean.
+            </p>
+            <p>
+              <a href="#" class="btn btn-get-started">Get Started</a>
+            </p>
+          </div>
+          <div class="col-md-6 col-lg-6 ps-lg-5">
+            <div class="row">
+              <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+                <div class="services-item" data-aos="fade-up" data-aos-delay="">
+                  <div class="services-icon">
+                    <i class="bi bi-search"></i>
+                  </div>
+                  <div>
+                    <h3>Square</h3>
+                    <p>Separated they live in Bookmarksgrove right at the coast</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+                <div class="services-item" data-aos="fade-up" data-aos-delay="100">
+                  <div class="services-icon">
+                    <i class="bi bi-command"></i>
+                  </div>
+                  <div>
+                    <h3>Technology</h3>
+                    <p>Separated they live in Bookmarksgrove right at the coast</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+                <div class="services-item" data-aos="fade-up" data-aos-delay="200">
+                  <div class="services-icon">
+                    <i class="bi bi-grid"></i>
+                  </div>
+                  <div>
+                    <h3>Brilliant Ideas</h3>
+                    <p>Separated they live in Bookmarksgrove right at the coast</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+                <div class="services-item" data-aos="fade-up" data-aos-delay="300">
+                  <div class="services-icon">
+                    <i class="bi bi-globe"></i>
+                  </div>
+                  <div>
+                    <h3>Blueprint</h3>
+                    <p>Separated they live in Bookmarksgrove right at the coast</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Services 2 Section -->
+
+
+    <!-- City Browsing Section-->
+
+
+    <div style="max-width: 1200px; margin: 20px auto; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+      <h2 style="display: flex; justify-content: space-between; align-items: center; font-size: 24px; margin-bottom: 20px;">
+          Explore Top Cities
+          <span style="color: white; background: red; padding: 5px 10px; border-radius: 20px; font-size: 12px;">NEW</span>
+      </h2>
+  
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;">
+          <div onclick="handleClick('Mumbai')" style="display: flex; flex-direction: column; align-items: center; background: #ffffff; border: 1px solid #ddd; border-radius: 10px; overflow: hidden; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer;">
+              <img src=assets/city/mumbai.jpg alt="Mumbai" style="width: 100%; height: 150px; object-fit: cover;">
+              <h3 style="margin: 10px 0 5px; font-size: 18px; text-transform: uppercase;">Mumbai</h3>
+              <a href="#" style="color: #007bff; text-decoration: none; font-size: 14px; margin-bottom: 10px;">Explore &rsaquo;</a>
+          </div>
+          <div onclick="handleClick('Bangalore')" style="display: flex; flex-direction: column; align-items: center; background: #ffffff; border: 1px solid #ddd; border-radius: 10px; overflow: hidden; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer;">
+              <img src=assets/city/bangalore.jpg alt="Bangalore" style="width: 100%; height: 150px; object-fit: cover;">
+              <h3 style="margin: 10px 0 5px; font-size: 18px; text-transform: uppercase;">Bangalore</h3>
+              <a href="#" style="color: #007bff; text-decoration: none; font-size: 14px; margin-bottom: 10px;">Explore &rsaquo;</a>
+          </div>
+          <div onclick="handleClick('Delhi')" style="display: flex; flex-direction: column; align-items: center; background: #ffffff; border: 1px solid #ddd; border-radius: 10px; overflow: hidden; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer;">
+              <img src=assets/city/delhi.jpg alt="Delhi" style="width: 100%; height: 150px; object-fit: cover;">
+              <h3 style="margin: 10px 0 5px; font-size: 18px; text-transform: uppercase;">Delhi NCR</h3>
+              <a href="#" style="color: #007bff; text-decoration: none; font-size: 14px; margin-bottom: 10px;">Explore &rsaquo;</a>
+          </div>
+          <div onclick="handleClick('Kolkata')" style="display: flex; flex-direction: column; align-items: center; background: #ffffff; border: 1px solid #ddd; border-radius: 10px; overflow: hidden; text-align: center; transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer;">
+              <img src=assets/city/kolkata.jpg alt="Kolkata" style="width: 100%; height: 150px; object-fit: cover;">
+              <h3 style="margin: 10px 0 5px; font-size: 18px; text-transform: uppercase;">Kolkata</h3>
+              <a href="#" style="color: #007bff; text-decoration: none; font-size: 14px; margin-bottom: 10px;">Explore &rsaquo;</a>
+          </div>
+      </div>
+  
+      <script>
+          function handleClick(cityName) {
+              alert(`You clicked on ${cityName}`);
+              // Add additional functionality here, such as redirecting or logging the action.
+          }
+  
+          // Add hover effects with JavaScript for more interactivity
+          document.querySelectorAll('div[onclick]').forEach((card) => {
+              card.addEventListener('mouseover', () => {
+                  card.style.transform = 'scale(1.05)';
+                  card.style.boxShadow = '0 6px 10px rgba(0, 0, 0, 0.2)';
+              });
+              card.addEventListener('mouseout', () => {
+                  card.style.transform = 'scale(1)';
+                  card.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+              });
+          });
+      </script>
+  </div>
+
+<!-- City Section End -->>
+  
+
+
+
+    <!-- Pricing Section -->
+ 
+    <!--<section id="pricing" class="pricing section light-background">
+
+       Section Title -->
+      <!--<div class="container section-title" data-aos="fade-up">
+        <p>Plans</p>
+        <h2>Pricing Table</h2>
+      </div> End Section Title -->
+
+      <!--<div class="container">
+
+        <div class="row gy-4">
+
+          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+            <div class="pricing-item">
+              <h3>Beginner</h3>
+              <h4><sup>$</sup>0<span> / month</span></h4>
+              <ul>
+                <li>Aida dere</li>
+                <li>Nec feugiat nisl</li>
+                <li>Nulla at volutpat dola</li>
+                <li class="na">Pharetra massa</li>
+                <li class="na">Massa ultricies mi</li>
+              </ul>
+              <div class="btn-wrap">
+                <a href="#" class="btn-buy">Buy Now</a>
+              </div>
+            </div>
+          </div> End Pricing Item -->
+
+          <!--<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="pricing-item recommended">
+              <span class="recommended-badge">Recommended</span>
+              <h3>Business</h3>
+              <h4><sup>$</sup>19<span> / month</span></h4>
+              <ul>
+                <li>Aida dere</li>
+                <li>Nec feugiat nisl</li>
+                <li>Nulla at volutpat dola</li>
+                <li>Pharetra massa</li>
+                <li class="na">Massa ultricies mi</li>
+              </ul>
+              <div class="btn-wrap">
+                <a href="#" class="btn-buy">Buy Now</a>
+              </div>
+            </div>
+          </div> End Pricing Item -->
+
+          <!--<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="pricing-item">
+              <h3>Developer</h3>
+              <h4><sup>$</sup>29<span> / month</span></h4>
+              <ul>
+                <li>Aida dere</li>
+                <li>Nec feugiat nisl</li>
+                <li>Nulla at volutpat dola</li>
+                <li>Pharetra massa</li>
+                <li>Massa ultricies mi</li>
+              </ul>
+              <div class="btn-wrap">
+                <a href="#" class="btn-buy">Buy Now</a>
+              </div>
+            </div>
+          </div> End Pricing Item -->
+
+        <!--</div>
+
+      </div>
+
+    </section> /Pricing Section -->
+  
+  
+    <!-- Faq Section -->
+    <section id="faq" class="faq section">
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <p>Plans</p>
+        <h2>Frequently Asked Questions</h2>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up">
+        <div class="row">
+          <div class="col-12">
+            <div class="custom-accordion" id="accordion-faq">
+              <div class="accordion-item">
+                <h2 class="mb-0">
+                  <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-faq-1">
+                    How to download and register?
+                  </button>
+                </h2>
+
+                <div id="collapse-faq-1" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion-faq">
+                  <div class="accordion-body">
+                    Far far away, behind the word mountains, far from the countries
+                    Vokalia and Consonantia, there live the blind texts. Separated
+                    they live in Bookmarksgrove right at the coast of the Semantics,
+                    a large language ocean.
+                  </div>
+                </div>
+              </div>
+              <!-- .accordion-item -->
+
+              <div class="accordion-item">
+                <h2 class="mb-0">
+                  <button class="btn btn-link collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-faq-2">
+                    How to link your paypal and bank account?
+                  </button>
+                </h2>
+  
+                <div id="collapse-faq-2" class="collapse" aria-labelledby="headingThree" data-parent="#accordion-faq">
+                  <div class="accordion-body">
+                    When she reached the first hills of the Italic Mountains, she
+                    had a last view back on the skyline of her hometown
+                    Bookmarksgrove, the headline of Alphabet Village and the subline
+                    of her own road, the Line Lane. Pityful a rethoric question ran
+                    over her cheek, then she continued her way.
+                  </div>
+            </div>
+            <!-- .accordion-item -->
+
+            <div class="accordion-item">
+              <h2 class="mb-0">
+                <button class="btn btn-link collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-faq-3">
+                  How to link your paypal and bank account?
+                </button>
+              </h2>
+
+              <div id="collapse-faq-3" class="collapse" aria-labelledby="headingThree" data-parent="#accordion-faq">
+                <div class="accordion-body">
+                  When she reached the first hills of the Italic Mountains, she
+                  had a last view back on the skyline of her hometown
+                  Bookmarksgrove, the headline of Alphabet Village and the subline
+                  of her own road, the Line Lane. Pityful a rethoric question ran
+                  over her cheek, then she continued her way.
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="mb-0">
+                  <button class="btn btn-link collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-faq-4">
+                    How to link your paypal and  account?
+                  </button>
+                </h2>
+  
+                <div id="collapse-faq-4" class="collapse" aria-labelledby="headingThree" data-parent="#accordion-faq">
+                  <div class="accordion-body">
+                    When she reached the first hills of the Italic Mountains, she
+                    had a last view back on the skyline of her hometown
+                    Bookmarksgrove, the headline of Alphabet Village and the subline
+                    of her own road, the Line Lane. Pityful a rethoric question ran
+                    over her cheek, then she continued her way.
+                    
+                  </div>
+            </div>
+            <!-- .accordion-item -->
+
+          </div>
+        </div>
+      </div>
+      </div>
+    </section><!-- /Faq Section -->
+
+    <!-- Testimonials Section -->
+    <!--<section id="testimonials" class="testimonials section">
+      
+      <div class="container section-title" data-aos="fade-up">-->
+        <!--
+       <p>Happy Customers</p>
+        <h2>Testimonials</h2>
+      </div>
+
+      <div class="container" data-aos="fade-up">
+        <div class="row justify-content-center">
+          <div class="col-lg-7">
+            <div class="swiper init-swiper">
+              <script type="application/json" class="swiper-config">
+                {
+                  "loop": true,
+                  "speed": 600,
+                  "autoplay": {
+                    "delay": 5000
+                  },
+                  "slidesPerView": "auto",
+                  "pagination": {
+                    "el": ".swiper-pagination",
+                    "type": "bullets",
+                    "clickable": true
+                  },
+                  "breakpoints": {
+                    "320": {
+                      "slidesPerView": 1,
+                      "spaceBetween": 40
+                    },
+                    "1200": {
+                      "slidesPerView": 1,
+                      "spaceBetween": 1
+                    }
+                  }
+                }
+              </script>
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="testimonial mx-auto">
+                    <figure class="img-wrap">
+                      <img src="assets/img/testimonials/testimonials-1.jpg" alt="Image" class="img-fluid">
+                    </figure>
+                    <h3 class="name">Adam Aderson</h3>
+                    <blockquote>
+                      <p>
+                        “There live the blind texts. Separated they live in
+                        Bookmarksgrove right at the coast of the Semantics, a large
+                        language ocean.”
+                      </p>
+                    </blockquote>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="testimonial mx-auto">
+                    <figure class="img-wrap">
+                      <img src="assets/img/testimonials/testimonials-2.jpg" alt="Image" class="img-fluid">
+                    </figure>
+                    <h3 class="name">Lukas Devlin</h3>
+                    <blockquote>
+                      <p>
+                        “There live the blind texts. Separated they live in
+                        Bookmarksgrove right at the coast of the Semantics, a large
+                        language ocean.”
+                      </p>
+                    </blockquote>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="testimonial mx-auto">
+                    <figure class="img-wrap">
+                      <img src="assets/img/testimonials/testimonials-3.jpg" alt="Image" class="img-fluid">
+                    </figure>
+                    <h3 class="name">Kayla Bryant</h3>
+                    <blockquote>
+                      <p>
+                        “There live the blind texts. Separated they live in
+                        Bookmarksgrove right at the coast of the Semantics, a large
+                        language ocean.”
+                      </p>
+                    </blockquote>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>< /Testimonials Section -->
+
+  </main>
+
+  <footer id="footer" class="footer light-background">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-3 mb-3 mb-md-0">
+          <div class="widget">
+            <h3 class="widget-heading">About Us</h3>
+            <p class="mb-4">
+              There live the blind texts. Separated they live in Bookmarksgrove
+              right at the coast of the Semantics, a large language ocean.
+            </p>
+            <p class="mb-0">
+              <a href="#" class="btn-learn-more">Learn more</a>
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 ps-lg-5 mb-3 mb-md-0">
+          <div class="widget">
+            <h3 class="widget-heading">Navigation</h3>
+            <ul class="list-unstyled float-start me-5">
+              <li><a href="#">Overview</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Find Buyers</a></li>
+            </ul>
+            <ul class="list-unstyled float-start">
+              <li><a href="#">Overview</a></li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Services</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 pl-lg-5">
+          <div class="widget">
+            <h3 class="widget-heading">Recent Posts</h3>
+            <ul class="list-unstyled footer-blog-entry">
+              <li>
+                <span class="d-block date">May 3, 2020</span>
+                <a href="#">There live the Blind Texts</a>
+              </li>
+              <li>
+                <span class="d-block date">May 3, 2020</span>
+                <a href="#">Separated they live in Bookmarksgrove right</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-3 pl-lg-5">
+          <div class="widget">
+            <h3 class="widget-heading">Connect</h3>
+            <ul class="list-unstyled social-icons light mb-3">
+              <li>
+                <a href="#"><span class="bi bi-facebook"></span></a>
+              </li>
+              <li>
+                <a href="#"><span class="bi bi-twitter-x"></span></a>
+              </li>
+              <li>
+                <a href="#"><span class="bi bi-linkedin"></span></a>
+              </li>
+              <li>
+                <a href="#"><span class="bi bi-google"></span></a>
+              </li>
+              <li>
+                <a href="https://www.instagram.com/unway.build/"><span class="bi bi-instagram"></span></a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="widget">
+            <div class="footer-subscribe">
+              <h3 class="widget-heading">Subscribe</h3>
+              <form action="forms/newsletter.php" method="post" class="php-email-form">
+                <div class="mb-2">
+                  <input type="text" class="form-control" name="email" placeholder="Enter your email">
+
+                  <button type="submit" class="btn btn-link">
+                    <span class="bi bi-arrow-right"></span>
+                  </button>
+                </div>
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">
+                  Your subscription request has been sent. Thank you!
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="copyright d-flex flex-column flex-md-row align-items-center justify-content-md-between">
+        <p>© <span>Copyright</span> <strong class="px-1 sitename">Unway Build.</strong> <span>All Rights Reserved</span></p>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you've purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
+          Designed by  <a>Jeet Dutta</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

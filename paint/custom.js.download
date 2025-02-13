@@ -1,0 +1,375 @@
+jQuery(document).ready(function() {
+jQuery(".search-a").on("click", function() {jQuery(".catelogmodal").css("display","block")});
+jQuery(".btn-close").on("click", function() {jQuery(".catelogmodal").css("display","none")});
+var base_url = window.location.origin;
+	jQuery(document).on('keyup', '.searchdata', function () {
+		var txt = jQuery(this).val();
+		var data = "&title=" + txt;
+		//console.log(txt);
+		jQuery.ajax({
+			type: "post",
+			url: base_url + '/views/ajax?_wrapper_format=drupal_ajax',
+			data:'&title=' + txt + "&view_name=colour_catalogue&view_display_id=block_3",
+			success: function (result) {
+				for (var i = 0; i < result.length; i++) {
+					if(txt == ''){
+						console.log(1);
+						jQuery("#trending-result").html('<div class="row color-pallatte" id="trending-color"><h6 class="modal-title">Trending Colours:</h6><div class="col colordiv"><div class="wrap"><a href="/colour-catalogue/birthday-kiss"><div class="color-code" style="background-color:#f0e3e0"></div><div class="color-name"><span class="colorname">BIRTHDAY KISS - 4111</span></div></a></div></div><div class="col colordiv"><div class="wrap"><a href="/colour-catalogue/apple-green-colour"><div class="color-code" style="background-color:#c1e19d"></div><div class="color-name"><span class="colorname">Apple Green - 02585</span></div></a></div></div><div class="col colordiv"><div class="wrap"><a href="/colour-catalogue/character-dance"><div class="color-code" style="background-color:#70516f"></div><div class="color-name"><span class="colorname">CHARACTER DANCE - 4169</span></div></a></div></div><div class="col colordiv"><div class="wrap"><a href="/colour-catalogue/celestial-pink"><div class="color-code" style="background-color:#e9dadb"></div><div class="color-name"><span class="colorname">CELESTIAL PINK - 2239</span></div></a></div></div><div class="col colordiv"><div class="wrap"><a href="/colour-catalogue/celebrity"><div class="color-code" style="background-color:#d26e83"></div><div class="color-name"><span class="colorname">CELEBRITY - 4116</span></div></a></div></div><div class="col colordiv"><div class="wrap"><a href="/colour-catalogue/character-dance"><div class="color-code" style="background-color:#70516f"></div><div class="color-name"><span class="colorname">CHARACTER DANCE - 4169</span></div></a></div></div></div>');
+						jQuery("#views-exposed-form-colour-catalogue-block-3").hide();
+					}
+					else if(result[i].command == 'insert' && result[i].method == 'replaceWith') {
+						console.log(2);
+						jQuery("#trending-result").html(result[i].data);
+						jQuery("#views-exposed-form-colour-catalogue-block-3").hide();
+					}
+					/*else{
+						console.log(3);
+						jQuery("#trending-result").html(result[i].data);
+						jQuery("#views-exposed-form-colour-catalogue-block-3").hide();
+					}*/
+					
+					/*if(result[i].command == 'insert' && result[i].method == 'replaceWith') {
+						console.log(2);
+						jQuery("#trending-result").html(result[i].data);
+						jQuery("#views-exposed-form-colour-catalogue-block-3").hide();
+					}*/
+					
+					
+				}
+			}
+		});
+	});
+	
+	jQuery(document).on('keyup', '#dealersearch', function () {
+		var txt = jQuery(this).val();
+		var data = "&title=" + txt;
+		console.log(txt);
+		jQuery.ajax({
+			type: "post",
+			url: base_url + '/views/ajax?_wrapper_format=drupal_ajax',
+			data:'&title=' + txt + "&view_name=store_locator&view_display_id=block_5",
+			success: function (result) {
+				console.log(result);
+				for (var i = 0; i < result.length; i++) {
+					if(result[i].command == 'insert' && result[i].method == 'replaceWith') {
+						console.log(2);
+						jQuery(".storelist").html(result[i].data);
+						//jQuery("#views-exposed-form-colour-catalogue-block-3").hide();
+					}
+					
+				}
+			}
+		});
+	});
+	/*jQuery(document).on("click", ".search-a", function(){
+        jQuery(".overlay-bg").css('display','block');
+      });*/
+      jQuery(document).on("click", ".btn-close", function(){
+        jQuery(".overlay-bg").css('display','none');
+      })
+	});
+	
+	jQuery(document).on('change', "select[name='twocolour_type_select']", function () {
+		//jQuery(".statelist li").removeClass("active");
+		//jQuery('.select-form-input .statelist li').parents('.drop-down-div').find('span').html('Select State');
+		var selectedValue = jQuery(this).val();
+		//jQuery("#storetypeid").val(selectedValue);
+		//jQuery("select[name='field_primary_code_target_id']").val(selectedValue).change();
+		jQuery(".views-exposed-form input[name='primary_code']").val(selectedValue);
+		jQuery(".views-exposed-form input[name='primary_code']").trigger("keyup");
+	});
+	
+	jQuery(document).on('keyup', '#twocoloursearch', function () {
+		txt = jQuery(this).val();
+		jQuery(".views-exposed-form input[name='colour_search']").val(txt);
+		jQuery(".views-exposed-form input[name='colour_search']").trigger("keyup");
+	});
+	
+	/*var swiper = new Swiper(".paletteSwiper", {
+        slidesPerView: 6,
+        centeredSlides: false,
+        loop: true,
+        pagination: false,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        on: {
+          init: function () {
+            this.slides.forEach((slide, index) => {
+              if (index === this.activeIndex) {
+                slide.style.width = '33.33%';
+              } else {
+                slide.style.width = '14%';
+              }
+            });
+          },
+          slideChangeTransitionStart: function () {
+            this.slides.forEach((slide) => {
+              slide.style.width = '15%';
+            });
+          },
+          slideChangeTransitionEnd: function () {
+            const activeSlide = this.slides[this.activeIndex];
+            activeSlide.style.width = '33.33%';
+          }
+        }
+      });
+	
+	var swiperMobile = new Swiper(".paletteSwiperMobile", {
+        slidesPerView: 1,
+        centeredSlides: false,
+        loop: true,
+        pagination: false,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });*/
+	  
+	var swiper = new Swiper(".paletteSwiper", {
+        slidesPerView: 4,
+        // spaceBetween: 20,
+        centeredSlides: false,
+        loop: true,
+        pagination: false,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+
+        breakpoints: {
+          1280: {
+            slidesPerView: 6,
+            spaceBetween: 20,
+          },
+        },
+        // on: {
+        //   init: function () {
+        //     this.slides.forEach((slide, index) => {
+        //       if (index === this.activeIndex) {
+        //         slide.style.width = '33.33%';
+        //       } else {
+        //         slide.style.width = '14%';
+        //       }
+        //     }
+        //     );
+        //   },
+        //   slideChangeTransitionStart: function () {
+        //     this.slides.forEach((slide) => {
+        //       slide.style.width = '15%';
+        //     });
+        //   },
+        //   slideChangeTransitionEnd: function () {
+        //     const activeSlide = this.slides[this.activeIndex];
+        //     activeSlide.style.width = '33.33%';
+        //   }
+        // }
+      });
+
+      var swiperMobile = new Swiper(".paletteSwiperMobile", {
+        slidesPerView: 1,
+        centeredSlides: false,
+        loop: true,
+        pagination: false,
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+
+        breakpoints: {
+          712: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+          },
+        },
+
+        //    breakpoints: {
+        //     540: {
+        //       slidesPerView: 2,
+        //       spaceBetween: 20,
+        //     },
+        //   },
+        //   breakpoints: {
+        //     414: {
+        //       slidesPerView: 1,
+        //       // spaceBetween: 20,
+        //     },
+        //   },
+        //   breakpoints: {
+        //     360: {
+        //       slidesPerView: 1,
+        //       // spaceBetween: 20,
+        //     },
+        //   },
+        //   breakpoints: {
+        // 320: {
+        //       slidesPerView: 1,
+        //       // spaceBetween: 20,
+        //     },
+        //   },
+
+      });
+
+	function updateSlides(swiperInstance) {
+	  swiperInstance.slides.forEach((slide) => {
+		let img = slide.querySelector('img');
+		if (slide.classList.contains('swiper-slide-active')) {
+		  if (!img.hasAttribute('data-original-src')) {
+			img.setAttribute('data-original-src', img.src);
+		  }
+		  img.src = slide.getAttribute('data-img-src');
+		} else {
+	  
+		  if (img.hasAttribute('data-original-src')) {
+			img.src = img.getAttribute('data-original-src'); 
+		  }
+		}
+	  });
+	}
+
+	swiper.slides.forEach((slide) => {
+	  slide.addEventListener('click', function() {
+		let realIndex = slide.getAttribute('data-swiper-slide-index'); 
+		swiper.slideToLoop(realIndex); 
+		updateSlides(swiper); 
+	  });
+	});
+
+
+	var swiperMobile = new Swiper(".paletteSwiperMobile", {
+		  slidesPerView: 1,
+		  centeredSlides: false,
+		  loop: true,
+		  pagination: false,
+		  navigation: {
+			nextEl: ".swiper-button-next",
+			prevEl: ".swiper-button-prev",
+		  },
+		  on: {
+			init: function () {
+			  updateSlidesmobile(this); 
+			},
+			slideChangeTransitionStart: function () {
+			  updateSlidesmobile(this);
+			},
+			slideChangeTransitionEnd: function () {
+			  updateSlidesmobile(this);  
+			}
+		  }
+		});
+
+		function updateSlidesmobile(swiperInstance) {
+		  swiperInstance.slides.forEach((slide) => {
+			let img = slide.querySelector('img');
+
+			if (slide.classList.contains('swiper-slide-active')) {
+			  if (!img.hasAttribute('data-original-src')) {
+				img.setAttribute('data-original-src', img.src);  
+			  }
+			  img.src = slide.getAttribute('data-img-src'); 
+			} else {
+			
+			  if (img.hasAttribute('data-original-src')) {
+				img.src = img.getAttribute('data-original-src');
+			  }
+			}
+		  });
+		}    
+	  
+// document.querySelector('.select-wrapper').addEventListener('click', function() {
+//     this.querySelector('.select').classList.toggle('open');
+// })
+// jQuery(".custom-option").on("click", function() {window.location.href = jQuery(this).attr("data-value")});
+
+
+/*jQuery(document).ready(function ($) {
+	//alert(test);
+	if (document.getElementById('map')) {
+		var apiKey = 'AIzaSyAasqzDd5sIm49DUogoun4lLwFvbgm-iJ4';
+		
+		var script_tag = document.createElement('script');
+		script_tag.setAttribute("type", "text/javascript");
+		//script_tag.setAttribute("src","https://maps.google.com/maps/api/js?key=AIzaSyD9Q99ZdlLXuVpAUDArDBkr2sDTc9vqMug&region=IN&callback=loadgooglemap");
+		script_tag.setAttribute("src", "https://maps.google.com/maps/api/js?key=AIzaSyAasqzDd5sIm49DUogoun4lLwFvbgm-iJ4&region=IN&callback=loadgooglemap");
+		script_tag.setAttribute("async", "true");
+		script_tag.setAttribute("defer", "true");
+		(document.getElementsByTagName("body")[0] || document.documentElement).appendChild(script_tag);
+		
+
+	}
+
+	$(document).on("click",".locatoBtn .enterPin",function(e){
+		e.preventDefault();
+		loadgooglemap();
+	});
+});
+
+function loadgooglemap() {
+
+
+	var locations = [];
+	jQuery(".card").each(function (index) {
+		var title = jQuery(this).data("title");
+		var lat = jQuery(this).data("lat");
+		//var latnew = lat.replace("° N", "");
+		var long = jQuery(this).data("long");
+		// var longnew = long.replace("° E", "");
+		var body = jQuery(this).data("body");
+		var mobile = jQuery(this).data("mobile");
+		//console.log(lat);
+
+		item = {}
+		item[0] = "<strong>" + title + "</strong><br/>" + body + "<br/>" + mobile;
+		//item[0] = body;
+		item[1] = lat;
+		item[2] = long;
+		item[3] = index;
+
+
+		//if(display){
+		locations.push(item);
+		//}
+	});
+	//console.log(locations[0]);
+
+	var map = new google.maps.Map(document.getElementById('map'), {
+		zoom: 5,
+		center: new google.maps.LatLng(94.317399, 26.655429),
+		mapTypeId: google.maps.MapTypeId.ROADMAP
+	});
+
+	var infowindow = new google.maps.InfoWindow();
+
+	var marker, i;
+
+	for (i = 0; i < locations.length; i++) {
+		var image = '/themes/nerolac/img/showroom.png';
+		marker = new google.maps.Marker({
+			position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+			map: map,
+			icon: image
+		});
+		console.log(marker); // Check if marker object is created
+		google.maps.event.addListener(marker, 'click', (function (marker, i) {
+			return function () {
+				infowindow.setContent(locations[i][0]);
+				infowindow.open(map, marker);
+			}
+		})(marker, i));
+	}
+}*/
+
+jQuery(document).ready(function ($) {
+	var currentUrl = window.location.href;
+		if(currentUrl.indexOf("/store-locator") != -1){
+		
+		$(".main-footer").addClass("storestatelist");
+		}
+});
+
+
+
+
+
+
